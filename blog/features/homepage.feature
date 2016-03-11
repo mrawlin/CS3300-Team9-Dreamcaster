@@ -16,3 +16,15 @@ Background: dreams have been added to the database
 
 
    And I am on the Dreams home page
+
+Scenario: view all dreams
+  When I click on "Dream List"
+  Then I should see a list of all the dreams that have been submitted by users
+
+Scenario: Add new dream
+  When I click on "New Dream"
+  Then I should see the page to create a new dream
+
+Scenario: User login
+  When I login as a registered user
+  Then I should see that I am logged into my account
