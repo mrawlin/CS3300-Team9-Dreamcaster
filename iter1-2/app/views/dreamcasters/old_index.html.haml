@@ -16,6 +16,8 @@
           %ul
             %li
               %a{:href => "#hero"} HOME
+            %li
+              %a{:href => "new_post"} NEW POST
       / Hero Section
       %section#hero.hero
         %h2.hero_header
@@ -31,20 +33,16 @@
       .gallery
         .thumbnail
           %h1.stats Dream 1
-          %h4 TITLE
-          %p One line description
-        .thumbnail
+          Description 1
+          .thumbnail
           %h1.stats Dream 2
-          %h4 TITLE
-          %p One line description
-        .thumbnail
-          %h1.stats Dream 3
-          %h4 TITLE
-          %p One line description
-        .thumbnail
-          %h1.stats Dream 4
-          %h4 TITLE
-          %p One line description
+          Description 2
+      %tbody
+      - @projects.each do |project|
+        %tr
+          %td= link_to "More about #{project.title}", project_path(project)
+          %td= project.user
+          %td= project.due_date.to_formatted_s(:long)
       / Parallax Section
       / More Info Section
       %footer
