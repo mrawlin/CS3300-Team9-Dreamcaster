@@ -1,0 +1,21 @@
+<h1>Dreamcasters</h1>
+ 
+ <%= link_to 'Dream List', controller: 'dreams' %>
+
+ <%= link_to 'New Dream', new_dream_path %>
+
+ <%= link_to 'Back', dreams_path %>
+<br><br><br>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+ 
+  <% @dreams.each do |dream| %>
+    <tr>
+      <td><%= dream.title %></td>
+      <td><%= dream.text %></td>
+    </tr>
+  <% end %>
+</table>
