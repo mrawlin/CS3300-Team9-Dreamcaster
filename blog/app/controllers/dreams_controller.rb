@@ -4,7 +4,10 @@ class DreamsController < ApplicationController
   end
 
   def create
-    render plain: params[:dreams].inspect #
+    @dream = Dream.new(params[:dream])
+
+    @dream.save
+    redirect_to @dream
   end
 
 end
