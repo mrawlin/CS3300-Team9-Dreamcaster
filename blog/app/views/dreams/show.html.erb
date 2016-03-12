@@ -8,4 +8,11 @@
   <%= @dream.text %>
 </p>
 
-<%= link_to '<button type="button">Back to Home</button>'.html_safe, dreams_path %>
+
+<p><%= link_to '<button type="button">Back to Home</button>'.html_safe, dreams_path %>
+</p>
+
+<p><%= link_to '<button type="button">Delete</button>'.html_safe, dream_path(@dream),
+			   method: :delete,
+			   data: {confirm: 'Are you sure?'} %>
+</p>
