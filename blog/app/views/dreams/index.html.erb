@@ -41,7 +41,7 @@
       </tr>
       <% @dreams.each do |dream| %>
       <tr>
-        <td><%= dream.title %></td>
+        <td><%= link_to dream.title .html_safe, dream_path(dream)%> </td>
         <td><%= dream.text %></td>
       </tr>
       <% end %>
