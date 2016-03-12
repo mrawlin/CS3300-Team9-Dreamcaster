@@ -4,6 +4,7 @@ Feature: display list of the dreams
      So users can browse the list of dreams
      I want to see dreams posted by users
 
+
 Background: dreams have been added to the database
    
     Given the following dreams exist:

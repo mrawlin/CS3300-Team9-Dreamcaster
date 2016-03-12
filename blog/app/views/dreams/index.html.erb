@@ -37,12 +37,12 @@
     <tbody>
       <tr>
         <th scope="col">Dream Title:</th>
-        <th scope="col">Dream Content:</th>
+
       </tr>
       <% @dreams.each do |dream| %>
       <tr>
         <td><%= link_to dream.title .html_safe, dream_path(dream)%> </td>
-        <td><%= dream.text %></td>
+
       </tr>
       <% end %>
     </tbody>
