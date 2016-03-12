@@ -11,4 +11,5 @@ Feature: Make New Post
                 When I explain my dream
                 And I press "Save dream"
                 Then my dream should be saved to the database
+                And I should see my new dream #show the page of the new dream that has been submitted
                 
