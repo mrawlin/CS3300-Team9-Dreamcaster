@@ -1,4 +1,3 @@
-require "Dream"
 
 Given(/^I am a user viewing the home page$/) do
 	assert_equal user.type, "user"
