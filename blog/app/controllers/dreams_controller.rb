@@ -28,17 +28,13 @@ class DreamsController < ApplicationController
 
   def create
     @dream = Dream.new(dream_params)
-
-    if !@dream.title == nil       
+      
         if @dream.save
 			redirect_to @dream
 		else
 			render 'new'
 		end
 	end
-    else
-        raise ArgumentError.new('Title cannot be empty.')
-    end
 
 	def destroy
 		@dream= Dream.find(params[:id])
