@@ -38,6 +38,13 @@ body main div {
 	font-size: 28px;
 }
 
+/* adding new stuff here */
+.tb1 {
+  text-align: left;
+  border: 2px dashed #D1C7AC;
+}
+
+
 audio,
 canvas,
 progress,
