@@ -11,11 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160312021217) do
+=======
+ActiveRecord::Schema.define(version: 20160318204325) do
+>>>>>>> f1cfb7cf07bae1b2cd1dbe18d2090ff052499f07
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
+=======
+  create_table "average_caches", force: :cascade do |t|
+    t.integer  "rater_id"
+    t.integer  "rateable_id"
+    t.string   "rateable_type"
+    t.float    "avg",           null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+>>>>>>> f1cfb7cf07bae1b2cd1dbe18d2090ff052499f07
   create_table "dreams", force: :cascade do |t|
     t.text     "title"
     t.text     "text"
@@ -23,14 +39,49 @@ ActiveRecord::Schema.define(version: 20160312021217) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "projects", force: :cascade do |t|
     t.string   "title"
     t.string   "user"
     t.text     "description"
     t.datetime "due_date"
     t.text     "extended_description"
+=======
+  create_table "overall_averages", force: :cascade do |t|
+    t.integer  "rateable_id"
+    t.string   "rateable_type"
+    t.float    "overall_avg",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "rates", force: :cascade do |t|
+    t.integer  "rater_id"
+    t.integer  "rateable_id"
+    t.string   "rateable_type"
+    t.float    "stars",         null: false
+    t.string   "dimension"
+>>>>>>> f1cfb7cf07bae1b2cd1dbe18d2090ff052499f07
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+<<<<<<< HEAD
+=======
+  add_index "rates", ["rateable_id", "rateable_type"], name: "index_rates_on_rateable_id_and_rateable_type", using: :btree
+  add_index "rates", ["rater_id"], name: "index_rates_on_rater_id", using: :btree
+
+  create_table "rating_caches", force: :cascade do |t|
+    t.integer  "cacheable_id"
+    t.string   "cacheable_type"
+    t.float    "avg",            null: false
+    t.integer  "qty",            null: false
+    t.string   "dimension"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rating_caches", ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type", using: :btree
+
+>>>>>>> f1cfb7cf07bae1b2cd1dbe18d2090ff052499f07
 end

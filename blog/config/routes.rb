@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
+=======
+  post '/rate' => 'rater#create', :as => 'rate'
+>>>>>>> f1cfb7cf07bae1b2cd1dbe18d2090ff052499f07
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
