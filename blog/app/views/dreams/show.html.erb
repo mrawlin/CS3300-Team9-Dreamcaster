@@ -1,24 +1,43 @@
-<h1>Here is the dream:</h1>
-<p>
-  <strong>Title:</strong>
-  <%= @dream.title %>
-</p>
-<p>
-  <strong>Text:</strong>
-  <%= @dream.text %>
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+<div class="container">
+  <div class="header">
+  </div>
+
+  <p><font size="7">The Dream:</font></p>
+
+  <table class="table table-bordered table-striped" width="100%" border="1" cellspacing="2" cellpadding="5">
+	<tbody>
+	<tr>
+	  <td> 	<strong>Title:</strong>
+		<%= @dream.title %></td>
+	</tr>
+	<tr>
+	  <td>
+		<strong>Text:</strong>
+		<%= @dream.text %>
+	  </td>
+	</tr>
+	</tbody>
+  </table>
 
 
-<p>
-  <%= link_to '<button type="button">Back to Home</button>'.html_safe, dreams_path %>
-</p>
 
-<p>
-  <%= link_to '<button type="button">Edit Dream</button>'.html_safe, edit_dream_path(@dream) %>
-</p>
+  <p>
+	<%= link_to 'Back to Home', dreams_path %>
+  </p>
 
-<p>
-  <%= link_to '<button type="button">Delete Dream</button>'.html_safe, dream_path(@dream),
-			   method: :delete,
-			   data: {confirm: 'Are you sure?'} %>
-</p>
+  <p>
+	<%= link_to 'Edit Dream', edit_dream_path(@dream) %>
+  </p>
+
+  <p>
+	<%= link_to 'Delete Dream', dream_path(@dream),
+				method: :delete,
+				data: {confirm: 'Are you sure?'} %>
+  </p>
+</div>
+</html>
+

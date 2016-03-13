@@ -15,16 +15,19 @@
 
 	<p>
 	  <%= f.label :"Describe your dream in a few single words" %><br><br>
-	  <%= f.text_field :title, size: 50, :class => "tb1" %>
+	  <%= f.text_field :title, size: 30, :class => "tb1" %>
 	</p>
 
 	<p>
 	  <%= f.label :"Tell us about your dream..." %><br><br>
-	  <%= f.text_area :text, cols:49, rows:20, :class => "tb1" %>
+	  <%= f.text_area :text, cols:30, rows:10, :class => "tb1" %>
 	</p>
 
 	<p>
-	  <%= f.submit %> <%= link_to '<button type="button">Cancel</button>'.html_safe, dreams_path %>
+	  <%= f.submit %> <%= link_to 'Cancel', dreams_path %>
 	</p>
 
 <% end %>
+
+
+
