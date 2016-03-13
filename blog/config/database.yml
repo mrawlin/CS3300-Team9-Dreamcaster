@@ -13,3 +13,6 @@ development: &development
   pool: 5
   username: myapp
   password: password
+
+cucumber:
+  <<: *test
