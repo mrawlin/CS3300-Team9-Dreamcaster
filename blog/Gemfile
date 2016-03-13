@@ -45,7 +45,7 @@ gem 'haml'
 
 # Deploy with Capistrano
 # gem 'capistrano'
-=======
+#=======
 source 'https://rubygems.org'
 
 
