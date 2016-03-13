@@ -21,12 +21,10 @@
   <main>
   <div class="container">
     <div class="header">
-        <img src="images/dreamcasters_logo.png" width="731" height="246" alt="Dreamcasters Logo"/>
+        <a href=dreams.path><img src="images/dreamcasters_logo.png" width="731" height="246" alt="Dreamcasters Logo"/></a>
     </div>
     <div class="row">
-          <div class="col-lg-3 col-md-3 col-sm-3 col-xs12 col-lg-offset-3 col-md-offset-3 col-sm-offset-3">
-            <h2 style="text-align:center"><%= link_to 'Dream List', controller: 'dreams' %></h2>
-          </div>
+
           <div class="col-lg-3 col-md-3 col-sm-3 col-xs12">
             <h2 style="text-align:center"><%= link_to 'New Dream', new_dream_path %></h2>
           </div>
@@ -37,12 +35,11 @@
     <tbody>
       <tr>
         <th scope="col">Dream Title:</th>
-        <th scope="col">Dream Content:</th>
+
       </tr>
       <% @dreams.each do |dream| %>
       <tr>
         <td><%= link_to dream.title .html_safe, dream_path(dream)%> </td>
-        <td><%= dream.text %></td>
       </tr>
       <% end %>
     </tbody>

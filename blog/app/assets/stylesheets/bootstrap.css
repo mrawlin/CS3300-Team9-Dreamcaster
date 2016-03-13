@@ -15,6 +15,7 @@ body {
 	font-size: 20px;
 	font-style: normal;
 	font-weight: 300;
+  text-align: left;
 }
 article,
 aside,
@@ -37,6 +38,17 @@ body main div {
 	font-weight: 400;
 	font-size: 28px;
 }
+
+/* adding new stuff here */
+.tb1 {
+  text-align: left;
+  border: 2px dashed #D1C7AC;
+}
+
+.lefttext {
+  text-align: left;
+}
+
 
 audio,
 canvas,
@@ -195,13 +207,16 @@ table {
   border-spacing: 0;
   border-collapse: collapse;
 }
-td,
+td {
+  text-align: left;
+}
 th {
 	padding: 0;
 	font-family: annie-use-your-telescope;
 	font-style: normal;
 	font-weight: 400;
 	font-size: large;
+  text-align: left;
 }
 team-text {
 	text-align: left;

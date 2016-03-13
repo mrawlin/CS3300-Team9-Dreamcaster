@@ -5,7 +5,7 @@ class DreamsController < ApplicationController
 	end
 
 	def index
-		@dreams = Dream.all
+		@dreams = Dream.all.reverse
 	end
 
 	def edit
@@ -28,8 +28,8 @@ class DreamsController < ApplicationController
 
   def create
     @dream = Dream.new(dream_params)
-
-    if @dream.save
+      
+        if @dream.save
 			redirect_to @dream
 		else
 			render 'new'
