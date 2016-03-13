@@ -5,7 +5,7 @@ class DreamsController < ApplicationController
 	end
 
 	def index
-		@dreams = Dream.all
+		@dreams = Dream.all.reverse
 	end
 
 	def edit
