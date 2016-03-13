@@ -4,8 +4,8 @@ module NavigationHelpers
  
     when /the home\s? page/
       'dreams#index'
-    when /the new dream\s? page/
-      '/dreams/new'
+    when /the create new dream\s? page/
+      "/dreams/new"
     else
       begin
         page_name =~ /the (.*) page/

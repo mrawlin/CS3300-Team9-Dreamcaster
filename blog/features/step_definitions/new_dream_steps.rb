@@ -28,6 +28,15 @@ Then(/^I should see "([^"]*)"$/) do |item|
   end
 end
 
+Then(/^page should be new dreams page$/) do
+
+  current_path = URI.parse(current_url).path
+
+  expect(current_path).to match("/dreams/[0-9]+")
+end
+
+
 Then /^(?:|I )should be on (.+)$/ do |page_name|
 	expect(page).to have_current_path(path_to(page_name), only_path: true)
 end
+

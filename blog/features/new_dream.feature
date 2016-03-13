@@ -1,13 +1,13 @@
-Feature: New Dream
-	
-	As a user
-  I want to create a dream
-  So that I can participate in the community
+Feature: Post Dream
 
-  Scenario: Create a dream
+	As a user
+  I want to post my dream to the DreamCasters community.
+  So that I can share my dreams with other users.
+
+  Scenario: Post a dream
     Given I am on the home page
     When I click "new_dream"
-    Then I should be on the new dream page
+    Then I should be on the create new dream page
     And I fill in "title" with "dream1"
     And I fill in "content" with "description1"
     When I press "Create Dream"

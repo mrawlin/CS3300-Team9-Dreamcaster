@@ -24,15 +24,15 @@ class DreamsController < ApplicationController
 
   def new
 		@dream = Dream.new
+
   end
 
-  def create
-    @dream = Dream.new(dream_params)
-      
-        if @dream.save
+	def create
+		@dream = Dream.create!(dream_params)
+		if @dream.save 
 			redirect_to @dream
 		else
-			render 'new'
+			redirect_to dreams_path
 		end
 	end
 
@@ -43,8 +43,8 @@ class DreamsController < ApplicationController
 		redirect_to dreams_path
 	end
 
-  private
-  	def dream_params
-  		params.require(:dream).permit(:title, :text)
-  	end
+	private
+		def dream_params
+			params.require(:dream).permit(:title, :text)
+		end
 end
