@@ -1,0 +1,53 @@
+<!doctype html>
+%html{:lang => "en-US"}
+  %head
+    %meta{:charset => "utf-8"}
+      %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+        %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+    %title= yield(:title)
+  %body
+    / Main Container
+    .container
+      / Navigation
+      %header
+        %a{:href => ""}
+          %h4.logo TEAM 9
+        %nav
+          %ul
+            %li
+              %a{:href => "#hero"} HOME
+            %li
+              %a{:href => "new_post"} NEW POST
+      / Hero Section
+      %section#hero.hero
+        %h2.hero_header
+          %span.light
+            %font{:color => "#ffffff"}> DREAM
+            CASTERS
+        %p.tagline WHERE DREAMS ARE EXPLAINED
+      / About Section
+      %section#about.about
+        %h2.hidden About
+        %p.text_column Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      / Stats Gallery Section
+      .gallery
+        .thumbnail
+          %h1.stats Dream 1
+          Description 1
+          .thumbnail
+          %h1.stats Dream 2
+          Description 2
+      %tbody
+      - @projects.each do |project|
+        %tr
+          %td= link_to "More about #{project.title}", project_path(project)
+          %td= project.user
+          %td= project.due_date.to_formatted_s(:long)
+      / Parallax Section
+      / More Info Section
+      %footer
+        %article.footer_column
+        / Footer Section
+      / Copyrights Section
+      .copyright &copy;2016 - Team 9
+    / Main Container Ends
