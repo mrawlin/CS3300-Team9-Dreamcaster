@@ -37,20 +37,21 @@
     </div>
     <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs12">
-            <h1 style="text-align:center"><%= link_to 'New Dream', new_dream_path, :id => 'new_dream', :class => 'btn btn-primary btn-lg' %></h1>
+            <h1 style="text-align: center"><%= link_to 'New Dream', new_dream_path, :id => 'new_dream', :class => 'btn btn-primary btn-lg' %></h1>
           </div>
     </div>
 
   <table class="table table-bordered table-striped" width="100%" border="1" cellspacing="2" cellpadding="5">
     <tbody>
       <tr>
+        <th scope="col"><h2><strong>Rating:</strong></h2></th>
         <th scope="col"><h2><strong>Dream Title:</strong></h2></th>
-
       </tr>
       <% @dreams.each do |dream| %>
       <tr>
+        <td>rating goes here</td>
         <td><%= link_to dream.title, dream_path(dream),
-        :id => dream.title.downcase.gsub(/\s+/, '_')%> </td>
+        :id => dream.title.to_param %></td>
       </tr>
       <% end %>
     </tbody>

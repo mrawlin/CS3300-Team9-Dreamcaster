@@ -1,5 +1,20 @@
 class DreamsController < ApplicationController
 
+	#Added features are in this section:
+
+	#Voting is on 10 point scale to add more resolution
+	def upvote
+		@dream = Dream.find(params[:id])
+		@dream.rating = @dream.rating + 10
+	end
+
+	def downvote
+		@dream = Dream.find(params[:id])
+		@dream.rating = @dream.rating - 10
+	end
+
+
+	#All standard methods below:
 	def show
 		@dream = Dream.find(params[:id])
 	end
@@ -24,10 +39,12 @@ class DreamsController < ApplicationController
 
   def new
 		@dream = Dream.new
+		#@dream.rating = 0
   end
 
 	def create
 		@dream = Dream.create!(dream_params)
+		#@dream.rating = 0
 		if @dream.save 
 			redirect_to @dream
 		else
@@ -44,6 +61,6 @@ class DreamsController < ApplicationController
 
 	private
 		def dream_params
-			params.require(:dream).permit(:title, :text)
+			params.require(:dream).permit(:title, :text, :rating)
 		end
 end
