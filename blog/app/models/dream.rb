@@ -1,5 +1,7 @@
 class Dream < ActiveRecord::Base
 
+	ratyrate_rateable 'quality'
+
 	#make dream title "web friendly"
 	#lowercase and replace spaces with underscores '_'
   def slug
