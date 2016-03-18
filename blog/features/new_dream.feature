@@ -48,3 +48,4 @@ Scenario: Delete a dream
       Then I should be on the dream page with title: this is a title 2
       When I click "delete_dream"
       Then I should be on the home page
+      And I should not see "this is a title 2"
