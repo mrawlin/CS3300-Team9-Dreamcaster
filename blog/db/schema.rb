@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160315203413) do
+ActiveRecord::Schema.define(version: 20160312021217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,9 +21,6 @@ ActiveRecord::Schema.define(version: 20160315203413) do
     t.text     "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "permalink"
   end
-
-  add_index "dreams", ["permalink"], name: "index_dreams_on_permalink", using: :btree
 
 end

@@ -1,3 +1,4 @@
+
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
@@ -35,10 +36,12 @@ Then(/^page should be new dreams page$/) do
   expect(current_path).to match("/dreams/[0-9]+")
 end
 
-Then(/^dream should be deleted$/) do |file|
-
-   file = File.delete(file)
+Then(/^I accept confirmation alert$/) do
+  #page.driver.browser.switch_to.alert.accept
+  page.accept_confirm do
+    click_link 'Delete'
   end
+end
 
 
 Then /^(?:|I )should be on (.+)$/ do |page_name|

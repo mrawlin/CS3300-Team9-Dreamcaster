@@ -3,17 +3,22 @@ module NavigationHelpers
     case page_name
  
     when /the home\s? page/
-      'dreams#index'
+      '/dreams'
     when /the create new dream\s? page/
       "/dreams/new"
     when /the dream page with title: (.*)/
       begin
         page_name =~ /the dream page with title: (.*)/
-        path_components = $1.split(/\s+/)
-        durl = Dream.to_param(path_components.push('path').join('_').to_sym)
-        self.send("/dreams/" + durl)
-      rescue Object => e
-        raise "Can't find mapping to \"#{durl}\" dream.\n"
+        title_c = $1.split(/\s+/).join(' ')
+        durl = "/dreams/" + Dream.find_by(title: title_c).to_param
+        return durl
+      end
+    when /the edit dream page for title: (.*)/
+      begin
+        page_name =~ /the edit dream page for title: (.*)/
+        title_c = $1.split(/\s+/).join(' ')
+        durl = "/dreams/" + Dream.find_by(title: title_c).to_param + "/edit"
+        return durl
       end
     else
       begin

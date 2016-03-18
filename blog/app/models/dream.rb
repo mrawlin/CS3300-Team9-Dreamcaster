@@ -1,6 +1,7 @@
 class Dream < ActiveRecord::Base
+
   def slug
-    title.downcase.gsub(" ", "-")  
+    title.downcase.gsub(" ", "_")  
   end
 
   def to_param
