@@ -51,7 +51,7 @@
       <tr>
         <td>rating goes here</td>
         <td><%= link_to dream.title, dream_path(dream),
-        :id => dream.title.to_param %></td>
+        :id => dream.title.downcase.gsub(" ", "_") %></td>
       </tr>
       <% end %>
     </tbody>
