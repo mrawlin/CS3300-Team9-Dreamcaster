@@ -29,3 +29,8 @@ Feature: Comment on post
       When I fill in "interpret" with "my thoughts"
       When I press "post"
       Then I should see "Interpretations:" before "my thoughts"
+
+
+
+
+    
