@@ -3,7 +3,7 @@ Feature: Up/Down Vote
   I want to up/down vote a dream based on it’s quality and/or my interest in it.
   So that I can help the community with content quality control.
 
-  Senario: See Ratings for Dreams
+  Scenario: See Ratings for Dreams
     Given the following dreams exist:
     | title  | text     | rating  |
     | title1 | text1    | 0       |
