@@ -35,6 +35,7 @@ gem 'has_permalink'
 gem 'selenium-webdriver'
 
 gem 'ratyrate'
+gem 'bcrypt',               '3.1.7'
 
 
 # Use ActiveModel has_secure_password
@@ -48,7 +49,7 @@ gem 'ratyrate'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem "rspec-rails", ">= 2.0.1"
+  #gem "rspec-rails", ">= 2.0.1"
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'  
   gem 'byebug'

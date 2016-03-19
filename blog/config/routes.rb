@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
   post '/rate' => 'rater#create', :as => 'rate'
   get 'welcome/index'
 
