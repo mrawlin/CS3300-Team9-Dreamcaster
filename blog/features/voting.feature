@@ -13,7 +13,7 @@ Feature: Up/Down Vote
 
     Then I should see "Ratings:"
     Then I should see "2" before "title2"   
-    And I should see a "0" before "title1"
+  And I should see a "0" before "title1"
 
   Scenario: Up/Down Vote a dream
     Given the following dreams exist:
