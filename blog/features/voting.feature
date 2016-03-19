@@ -7,11 +7,11 @@ Feature: Up/Down Vote
     Given the following dreams exist:
     | title  | text     | rating  |
     | title1 | text1    | 0       |
-    | title2 | text2    | 20      |
+    | title2 | text2    | 2       |
 
     And I am on the home page
 
-    
-    And I should see "this is a title 2"
-    And I should not see "this is text 1"
-    And I should not see "this is text 2"
+    Then I should see "2" before "title2"
+    When I press "upvote_button"
+    Then I should see "3" before "title2"
+
