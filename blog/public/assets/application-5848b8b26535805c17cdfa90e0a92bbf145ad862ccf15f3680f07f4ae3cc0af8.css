@@ -1,0 +1,158 @@
+/* mixins, variables, etc. */
+/* sidebar */
+/* line 17, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/custom.css.scss */
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 22, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/custom.css.scss */
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+/* miscellaneous */
+/* line 29, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/custom.css.scss */
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* forms */
+/* line 40, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/custom.css.scss */
+#error_explanation {
+  color: red;
+}
+/* line 42, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/custom.css.scss */
+#error_explanation ul {
+  color: red;
+  margin: 0 0 30px 0;
+}
+/* line 2, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/dreamcasters.css.scss */
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* line 8, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/dreamcasters.css.scss */
+body {
+  margin: 0;
+  font-family: annie-use-your-telescope;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  text-align: center;
+  background-color: #515151 !important;
+}
+
+/* line 18, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/dreamcasters.css.scss */
+.btn-primary.btn-lg {
+  font-size: 22px !important;
+  padding: 8px !important;
+  font-weight: bold !important;
+}
+
+/* line 24, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/dreamcasters.css.scss */
+.submit-button {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+/* line 30, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/dreamcasters.css.scss */
+.container {
+  background-color: #FFFFFF;
+}
+
+/* line 34, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/dreamcasters.css.scss */
+body main div {
+  font-family: annie-use-your-telescope;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+}
+
+/* adding new stuff here */
+/* line 42, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/dreamcasters.css.scss */
+.tb1 {
+  text-align: left;
+  border: 2px dashed #D1C7AC;
+}
+
+/* line 47, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/dreamcasters.css.scss */
+.lefttext {
+  text-align: left;
+}
+
+/* line 51, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/dreamcasters.css.scss */
+.logo {
+  text-align: center;
+}
+
+/* line 55, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/dreamcasters.css.scss */
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+/* line 59, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/dreamcasters.css.scss */
+a:hover,
+a:focus {
+  color: #23527c;
+  text-decoration: underline;
+}
+
+/* line 64, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/dreamcasters.css.scss */
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+/* line 70, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/dreamcasters.css.scss */
+img {
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* line 75, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/dreamcasters.css.scss */
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+/* line 80, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/dreamcasters.css.scss */
+td {
+  text-align: left;
+}
+
+/* line 84, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/dreamcasters.css.scss */
+th {
+  padding: 0;
+  font-family: annie-use-your-telescope;
+  font-style: normal;
+  font-weight: 400;
+  font-size: large;
+  text-align: left;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */

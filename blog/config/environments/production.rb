@@ -29,8 +29,8 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
-
+  #was changed:
+  config.assets.compile = true
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
@@ -79,7 +79,9 @@ Rails.application.configure do
 
   # Force all access to the app over SSL, use Strict-Transport-Security,
   # and use secure cookies.
-  config.force_ssl = true
+
+  config.force_ssl = false
+  config.serve_static_assets = true
 
 
 end
