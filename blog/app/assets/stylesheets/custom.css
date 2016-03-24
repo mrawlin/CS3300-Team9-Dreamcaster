@@ -47,3 +47,15 @@ $gray-medium-light: #eaeaea;
 .field_with_errors {
 }
 
+.checkbox {
+
+  span {
+
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}

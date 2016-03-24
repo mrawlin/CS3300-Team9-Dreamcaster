@@ -1,65 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dreamcasters</title>
-    <!-- Bootstrap -->
-  <!--<link href="css/bootstrap.css" rel="stylesheet">-->
- <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  <!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
-  <script>var __adobewebfontsappname__="dreamweaver"</script>
-  <script src="http://use.edgefonts.net/averia-serif-libre:n3,n4:default;asap:n4:default;annie-use-your-telescope:n4:default;averia-libre:n4:default.js" type="text/javascript"></script>
-</head>
-  <body>
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-  <main>
-  <div class="container">
-    <div class="row">
-      <div class="span12">
-          <a href=dreams.path><img class="img-responsive center-block visible-lg visible-md" src="images/dreamcasters_logo.png" alt="Dreamcasters Logo"/><img class="img-responsive center-block visible-sm visible-xs" src="images/dreamcasters_logo_small.png" alt="Dreamcasters Logo (Small)"/></a>
-      </div>
-    </div>
-    <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs12">
-            <h1 style="text-align: center"><%= link_to 'New Dream', new_dream_path, :id => 'new_dream', :class => 'btn btn-primary btn-lg' %></h1>
-          </div>
-    </div>
-
-  <table class="table table-bordered table-striped" width="100%" border="1" cellspacing="2" cellpadding="5">
-    <tbody>
-      <tr>
-        <th scope="col"><h2><strong>Rating:</strong></h2></th>
-        <th scope="col"><h2><strong>Dream Title:</strong></h2></th>
-      </tr>
-      <% @dreams.each do |dream| %>
-      <tr>
-        <td>rating goes here</td>
-        <td><%= link_to dream.title, dream_path(dream),
-        :id => dream.title.downcase.gsub(" ", "_") %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+<div class="row">
+  <div class="span12">
+      <img class="logo img-responsive center-block visible-lg visible-md" src="images/dreamcasters_logo.png" alt="Dreamcasters Logo"/><img class="logo img-responsive center-block visible-sm visible-xs" src="images/dreamcasters_logo_small.png" alt="Dreamcasters Logo (Small)"/>
   </div>
-  </main>
-  <!-- Include all compiled plugins (below), or include individual files as needed --> 
-  <script src="js/jquery-1.11.3.min.js"></script>
-  <script src="js/bootstrap.js"></script>
-  </body>
-</html>
+</div>
+<div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs12">
+        <h1 style="text-align: center"><%= link_to 'New Dream', new_dream_path, :id => 'new_dream', :class => 'btn btn-primary btn-lg' %></h1>
+      </div>
+</div>
+
+<table class="table table-bordered table-striped" width="100%" border="1" cellspacing="2" cellpadding="5">
+<tbody>
+  <tr>
+    <th scope="col"><h2><strong>Rating:</strong></h2></th>
+    <th scope="col"><h2><strong>Dream Title:</strong></h2></th>
+  </tr>
+  <% @dreams.each do |dream| %>
+  <tr>
+    <td>rating goes here</td>
+    <td><%= link_to dream.title, dream_path(dream),
+    :id => dream.title.downcase.gsub(" ", "_") %></td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
