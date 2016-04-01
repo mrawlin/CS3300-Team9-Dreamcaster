@@ -21,17 +21,13 @@
 	<p>
 	  <br><%= f.label :"Tell us about your dream:" %><br>
 	  <%= f.text_area :text, :id => 'content', cols: 30, rows:10, :class => "tb1" %>
+
+	  <br>
+	  <%= f.text_field :uprating, :value => @dream.uprating, :id => 'uprating', size: 10, :class => "tb1" %>
+	  &nbsp; &nbsp; &nbsp;
+	  <%= f.text_field :downrating, :value => @dream.downrating, :id => 'uprating', size: 10, :class => "tb1" %>
 	</p>
 
-	<% if logged_in? then
-		usr_name = @current_user.name
-	else
-		usr_name = "anonymous"
-	end %>
-
-	<%= f.hidden_field :creator, :value => usr_name %>
-	<%= f.hidden_field :uprating, :value => 0 %>
-	<%= f.hidden_field :downrating, :value => 0 %>
 	<p>
 	  <%= f.submit 'Create Dream', :id => 'create_dream', class: 'btn btn-primary btn-lg' %>
 	  <%= link_to 'Cancel', dreams_path %>

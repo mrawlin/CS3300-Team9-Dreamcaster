@@ -11,15 +11,18 @@
 
 <table class="table table-bordered table-striped" width="100%" border="1" cellspacing="2" cellpadding="5">
 <tbody>
+  <% if logged_in? %>
+    <%= @current_user.name %>
+  <% end %>
   <tr>
-    <th scope="col"><h2><strong>User Name:</strong></h2></th>
-    <th scope="col"><h2><strong>Rating:</strong></h2></th>
+    <th class="col-lg-2 col-md-2 col-sm-2 col-xs2"><h2><strong>User Name:</strong></h2></th>
+    <th class="col-lg-2 col-md-2 col-sm-2 col-xs2"><h2><strong>Rating:</strong></h2></th>
     <th scope="col"><h2><strong>Dream Title:</strong></h2></th>
   </tr>
   <% @dreams.each do |dream| %>
   <tr>
-    <td>User name goes here</td>
-    <td>rating goes here</td>
+    <td class="attr"><%= dream.creator %></td>
+    <td class="attr"><%= dream.uprating - dream.downrating %></td>
     <td><%= link_to dream.title, dream_path(dream),
     :id => dream.title.downcase.gsub(" ", "_") %></td>
   </tr>

@@ -29,8 +29,6 @@ body {
   font-size: 28px;
 }
 
-text
-
 section {
   overflow: auto;
 }
@@ -131,8 +129,12 @@ table {
   font-size: 28px;
 }
 
-td {
 
+th.attr, td.attr {
+  text-align: center;
+}
+
+td {
   text-align: left;
 }
 
