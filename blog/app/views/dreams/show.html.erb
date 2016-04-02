@@ -17,6 +17,16 @@
 		</tr>
 		</tbody>
   </table>
+
+<table>
+  <h2>Comments</h2>
+  <%= render @dream.comments %>
+
+  <h2>Add a comment:</h2>
+  <%= render 'comments/form' %>
+
+</table>
+
   <div class="btn-group">
   <p style="font-size: 20px;">
   <%= link_to 'Back to Home', dreams_path, :class => 'btn btn-primary btn-lg' %>

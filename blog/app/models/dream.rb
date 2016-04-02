@@ -1,5 +1,6 @@
 class Dream < ActiveRecord::Base
 
+  has_many :comments, dependent: :destroy
 	ratyrate_rateable 'quality'
 
 	#make dream title "web friendly"
