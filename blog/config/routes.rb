@@ -29,5 +29,8 @@ Rails.application.routes.draw do
       put "downvote", to: "dreams#downvote"
     end
   end
+ resources :dreams do
+   resources :comments
+ end
   
 end
