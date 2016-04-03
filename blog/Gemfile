@@ -34,7 +34,6 @@ gem 'has_permalink'
 
 gem 'selenium-webdriver'
 
-gem 'ratyrate'
 gem 'bcrypt',               '3.1.7'
 gem 'bootstrap-sass'
 
