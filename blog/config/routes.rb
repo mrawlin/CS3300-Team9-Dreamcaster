@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
-  post '/rate' => 'rater#create', :as => 'rate'
+  post 'upvote' => 'dreams#upvote'
+
   get 'welcome/index'
   get 'signup'  => 'users#new'
   
@@ -22,4 +23,11 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
+  resources :dreams do
+    member do
+      put "upvote", to: "dreams#upvote"
+      put "downvote", to: "dreams#downvote"
+    end
+  end
+  
 end

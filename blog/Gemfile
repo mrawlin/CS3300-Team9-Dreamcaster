@@ -29,6 +29,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #stuff I have added to iter1-1 (-Austin Wasinger)
 gem 'haml'
 
+gem 'acts_as_votable', '~> 0.10.0'
+
 gem 'rspec-expectations'
 gem 'has_permalink'
 

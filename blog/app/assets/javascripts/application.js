@@ -15,3 +15,8 @@
 //= require turbolinks
 //= require_tree .
 
+
+// $("#btn_upvote").on("click", function upvote(dream){
+// 	document.style.backgroundColor = '#AAAAFF'
+//     dream.uprating = dream.uprating + 1
+// });

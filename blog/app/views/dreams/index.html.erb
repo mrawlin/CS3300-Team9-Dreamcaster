@@ -22,10 +22,29 @@
   <% @dreams.each do |dream| %>
   <tr>
     <td class="attr"><%= dream.creator %></td>
-    <td class="attr"><%= dream.uprating - dream.downrating %></td>
+
+    <td class="attr">
+    <% if dream.upvote_count > 0 then %>+<%else%>&nbsp;<%end%><%= dream.upvote_count %>
+    <%= link_to "&#9650;".html_safe, upvote_dream_path(dream), method: :put %>
+    <%= link_to "&#9660;".html_safe, downvote_dream_path(dream), method: :put %>
+    <% if dream.downvote_count > 0 then %>-<%else%>&nbsp;<%end%><%= dream.downvote_count %></td>
+
     <td><%= link_to dream.title, dream_path(dream),
     :id => dream.title.downcase.gsub(" ", "_") %></td>
   </tr>
   <% end %>
+
+  
+  <script>
+  function upVote(btn) {
+    btn.innerHTML = "&#9650; te";
+    document.body.style.backgroundColor = dream;
+    //dream.uprating = dream.uprating + 1;
+  }
+  function downVote() {
+
+  }
+  </script>
+
 </tbody>
 </table>
