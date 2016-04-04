@@ -5,29 +5,38 @@ Feature: Up/Down Vote
 
   Scenario: See Ratings for Dreams
     Given the following dreams exist:
-    | title  | text     | rating  |
-    | title1 | text1    | 0       |
-    | title2 | text2    | 2       |
+    | title  | text     |
+    | title1 | text1    |
+    | title2 | text2    |
 
     And I am on the home page
 
-    Then I should see "Ratings:"
-    Then I should see "2" before "title2"   
-  And I should see a "0" before "title1"
+    Then I should see "Rating:"
+    Then I should see "0" before "0"
+    And I should see "0" before "title1"  
+    And I should see "0" before "0"
+    And I should see "0" before "title2"      
 
   Scenario: Up/Down Vote a dream
     Given the following dreams exist:
-    | title  | text     | rating  |
-    | title1 | text1    | 0       |
-    | title2 | text2    | 2       |
+    | title  | text     |
+    | title1 | text1    |
+    | title2 | text2    |
+
+    Given I am a new, logged-in user
 
     And I am on the home page
 
-    When I click on "title1"
-      Then I should be on the dream page with title: title1
-      And I should see "Rating: 2"
-      When I click on "upvote_button"
-      Then I should see "Rating: 3"
-      When I click on "downvote_button"
-      Then I should see "Rating: 2"
+    Then I should see "Rating:"
+    Then I should see "0" before "0"
+    And I should see "0" before "title1"  
+
+    When I click "upvote_btn_title1"
+    Then I should see "1" before "0"
+    And I should see "0" before "title1"
+
+    When I click "downvote_btn_title2"
+    Then I should see "1" before "0"
+    And I should see "0" before "-1"
+    And I should see "-1" before "title2"
 
