@@ -1,0 +1,233 @@
+
+/* mixins, variables, etc. */
+
+
+$gray-medium-light: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* sidebar */
+
+
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+
+/* forms */
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+}
+
+.checkbox {
+
+  span {
+
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+html {
+  font-family: annie-use-your-telescope;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+    -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+
+body {
+  padding-top: 60px;
+
+  font-family: annie-use-your-telescope;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  text-align: center;
+  background-color: #515151 !important;
+}
+
+*, p, span, div {
+  font-family: annie-use-your-telescope;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+}
+
+section {
+  overflow: auto;
+}
+
+input[type="checkbox"] {
+  transform:scale(2, 2);
+}
+
+.form-control {
+  font-family: annie-use-your-telescope;
+  font-style: normal;
+  font-weight: 400 !important;
+  font-size: 22px !important;
+}
+
+.navbar-brand {
+  font-size: 32px !important;
+  font-weight: normal !important;
+}
+
+.btn {
+  font-family: annie-use-your-telescope;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+}
+
+.btn-primary.btn-lg {
+    font-size: 22px !important;
+    padding: 8px !important;
+    font-weight: bold !important;
+
+}
+
+.submit-button { 
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+
+.container {
+  background-color: #FFFFFF;
+}
+
+body main div {
+  font-family: annie-use-your-telescope;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+}
+
+/* adding new stuff here */
+.tb1 {
+  text-align: left;
+  border: 2px dashed #D1C7AC;
+  font-family: annie-use-your-telescope;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.lefttext {
+  text-align: left;
+}
+
+.logo {
+  text-align: center;
+  padding: 5px;
+}
+
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #23527c;
+  text-decoration: underline;
+}
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+img {
+  vertical-align: middle;
+  text-align: center;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  font-family: annie-use-your-telescope;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+}
+
+
+th.attr, td.attr {
+  text-align: center;
+}
+
+td {
+  text-align: left;
+}
+
+th {
+  padding: 0;
+  font-family: annie-use-your-telescope;
+  font-style: normal;
+  font-weight: 400;
+  font-size: large;
+  text-align: left;
+}
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+

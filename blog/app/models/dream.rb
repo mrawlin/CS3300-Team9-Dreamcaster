@@ -1,8 +1,8 @@
 class Dream < ActiveRecord::Base
-	acts_as_votable
-	
-  has_many :comments, dependent: :destroy
 
+  has_many :comments, dependent: :destroy
+  acts_as_votable
+  
   def score
     self.get_upvotes.size - self.get_downvotes.size
   end
