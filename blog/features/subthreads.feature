@@ -29,4 +29,4 @@ Feature: Subthreads
 		Then I should be on the dream page with title "title1"
 		When I fill out the "Comment" with "my subthread"
 		And I click "post"
-		Then I should see "Comment: before "my subthread"
+		Then I should see "Comment" before "my subthread"
