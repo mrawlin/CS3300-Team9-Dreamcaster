@@ -1,41 +1,44 @@
-<p>
-  <strong>Title:</strong>
-  <%= @dream.title %>
-</p>
- 
-<p>
-  <strong>Text:</strong>
-  <%= @dream.text %>
-</p>
+<div class="row">
+  <table class="table table-bordered table-striped" width="100%" border="1" cellspacing="2" cellpadding="5">
+    <tbody>
+      <tr>
+  	  <td><strong>Poster:</strong><%= @dream.creator %></td>
+  	  </tr>
+  		<tr>
+  		  <td> <strong>Title:</strong><%= @dream.title %></td>
+  		</tr>
+  		<tr>
+  		  <td><strong>Text:</strong><%= @dream.text %></td>
+  		</tr>
+  	</tbody>
+  </table>
 
-
-<table class="table table-bordered table-striped" width="100%" border="1" cellspacing="2" cellpadding="5">
-  <tbody>
+  <br><hr><hr>
+  <table class="table table-bordered table-striped" width="75%" border="1" cellspacing="2" cellpadding="5">
+    <tbody>
     <tr>
-	  <td><strong>Poster:</strong><%= @dream.creator %></td>
-	  </tr>
-		<tr>
-		  <td> <strong>Title:</strong><%= @dream.title %></td>
-		</tr>
-		<tr>
-		  <td><strong>Text:</strong><%= @dream.text %></td>
-		</tr>
-	</tbody>
-</table>
+    <th><h2>Comments</h2></th>
+    </tr>
+    <tr>
+    <td>
+    <%= render @dream.comments %>
+    </td>
+    </tr>
+    </tbody>
+  </table>
 
-<table>
-  <h2>Comments</h2>
-  <%= render @dream.comments %>
-
+  <div>
+  <p style="text-align: left; width: auto;">
   <h2>Add a comment:</h2>
   <%= render 'comments/form' %>
-</table>
+  </p>
+  </div>
 
-<div class="btn-group">
-<p style="font-size: 20px;">
-<%= link_to 'Back to Home', dreams_path, :class => 'btn btn-primary btn-lg' %>
-<%= link_to 'Edit Dream', edit_dream_path(@dream), :id => 'edit_dream', :class => 'btn btn-primary btn-lg' %>
-<%= link_to 'Delete Dream', dream_path(@dream), :id => 'delete_dream',
-	method: :delete, data: {confirm: 'Are you sure?', id: 'confirm'},
-	:class => 'btn btn-primary btn-lg' %></p>
+  <div class="btn-group">
+  <%= link_to 'Back to Home', dreams_path, :class => 'btn btn-primary btn-lg' %>
+  <%= link_to 'Edit Dream', edit_dream_path(@dream), :id => 'edit_dream', :class => 'btn btn-primary btn-lg' %>
+  <%= link_to 'Delete Dream', dream_path(@dream), :id => 'delete_dream',
+  	method: :delete, data: {confirm: 'Are you sure?', id: 'confirm'},
+  	:class => 'btn btn-primary btn-lg' %>
+  </div>
 </div>
