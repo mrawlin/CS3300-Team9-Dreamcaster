@@ -64,10 +64,10 @@ class DreamsController < ApplicationController
 		@dream = Dream.create(dream_params)
 		if @dream.valid? then
 			redirect_to @dream
-		else
-			flash[:danger] = 'Invalid title length! Must have at least 5 characters.'
-      redirect_to new_dream_path
-		end
+    else
+			render 'new'
+    end
+
 	end
 
 	def destroy
