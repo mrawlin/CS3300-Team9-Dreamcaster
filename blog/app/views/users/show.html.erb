@@ -1,11 +1,19 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="col-md-4">
+  <aside class="col-md-12 col-lg-12">
     <section class="user_info">
       <h1>
         <%= gravatar_for @user %>
-        <%= @user.name %>
+        Username: <%= @user.name %><br>
+        User e-mail:&nbsp;<%= @user.email %>
       </h1>
     </section>
+  </aside>
+</div>
+<div class="row">
+  <aside class="col-md-12 col-lg-12">
+    <section>
+  		<%= link_to 'Back to Home', dreams_path, :class => 'btn btn-primary btn-lg' %>
+  </section>
   </aside>
 </div>

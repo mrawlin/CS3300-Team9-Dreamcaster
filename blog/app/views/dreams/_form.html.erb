@@ -1,9 +1,10 @@
 <%= form_for @dream do |f| %>
 
+
   <% if @dream.errors.any? %>
     <div id="error_explanation">
 	  <h2>
-		<%= pluralize(@dream.errors.count, "error") %> prohibited this article from being saved:
+		<%= pluralize(@dream.errors.count, "error") %>:
 	  </h2>
 	  <ul>
 		<% @dream.errors.full_messages.each do |msg| %>
@@ -20,14 +21,19 @@
 
 	<p>
 	  <br><%= f.label :"Tell us about your dream:" %><br>
-	  <%= f.text_area :text, :id => 'content', cols: 30, rows:10, :class => "tb1" %>
-	</p>
+	  <%= f.text_area :text, :id => 'content', cols: 30, rows:10, :class => "tb1" %><br>
 
-	<% if logged_in? then
-		usr_name = @current_user.name
-	else
-		usr_name = "anonymous"
-	end %>
+	  Posting as:&nbsp;
+		<% if logged_in? then
+			usr_name = @current_user.name
+		else
+			usr_name = "anonymous"
+		end %>
+
+	  <%= usr_name %><% if usr_name == "anonymous" then %>,&nbsp;<a href="/login">log in</a>
+	  	to post as a user.
+	  <% end %>
+	</p>
 
 	<%= f.hidden_field :creator, :value => usr_name %>
 	<%= f.hidden_field :uprating, :value => 0 %>
