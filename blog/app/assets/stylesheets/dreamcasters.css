@@ -132,6 +132,7 @@ table {
 
 th.attr, td.attr {
   text-align: center;
+  white-space: nowrap;
 }
 
 td {
