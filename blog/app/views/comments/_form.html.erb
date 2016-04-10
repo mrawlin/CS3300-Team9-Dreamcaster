@@ -1,7 +1,13 @@
 <%= form_for([@dream, @dream.comments.build]) do |f| %>
+  <% if logged_in? then
+    usr_name = @current_user.name
+  else
+    usr_name = "anonymous"
+  end %>
+
   <p>
 	<%= f.label :commenter %><br>
-	<%= f.text_field :commenter%>
+	<%= f.text_field :commenter, :readonly => true, :value => usr_name %>
   </p>
 
   <p>
