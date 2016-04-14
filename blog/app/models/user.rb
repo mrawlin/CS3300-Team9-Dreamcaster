@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   acts_as_voter
+  has_many :microposts, dependent: :destroy
 
   attr_accessor :remember_token
   before_save { self.email = email.downcase }

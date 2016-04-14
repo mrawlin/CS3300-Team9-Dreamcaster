@@ -3,9 +3,10 @@
 one:
   commenter: MyString
   body: MyText
-  article: 
+  # article:    if uncomment, this will cause a FixtureError
+ 
 
 two:
   commenter: MyString
   body: MyText
-  article: 
+ # article: 
