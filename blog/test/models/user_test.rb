@@ -11,7 +11,7 @@ class UserTest < ActiveSupport::TestCase
     assert @user.valid?
   end
 
- 	test "name should be present" do
+  test "name should be present" do
     @user.name = "     "
     assert_not @user.valid?
   end
@@ -21,7 +21,7 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
-	test "name should not be too long" do
+  test "name should not be too long" do
     @user.name = "a" * 51
     assert_not @user.valid?
   end
@@ -37,7 +37,7 @@ class UserTest < ActiveSupport::TestCase
     valid_addresses.each do |valid_address|
       @user.email = valid_address
       assert @user.valid?, "#{valid_address.inspect} should be valid"
-    end
+   end
   end
 
   test "email validation should reject invalid addresses" do
@@ -69,4 +69,12 @@ class UserTest < ActiveSupport::TestCase
   test "authenticated? should return false for a user with nil digest" do
     assert_not @user.authenticated?('')
   end
+
+  test "associated micropost should be destroyed" do 
+     @user.save
+     @user.microposts.create!(content: "Doesnt matter")
+     assert_difference 'Micropost.count', -1 do
+       @user.destroy
+  end
+end
 end
