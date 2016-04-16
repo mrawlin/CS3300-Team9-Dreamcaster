@@ -54,16 +54,6 @@ ActiveRecord::Schema.define(version: 20160403103948) do
     t.datetime "updated_at"
   end
 
-  create_table "projects", force: :cascade do |t|
-    t.string   "title"
-    t.string   "user"
-    t.text     "description"
-    t.datetime "due_date"
-    t.text     "extended_description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "rates", force: :cascade do |t|
     t.integer  "rater_id"
     t.integer  "rateable_id"
