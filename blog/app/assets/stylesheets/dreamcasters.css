@@ -12,14 +12,34 @@ html {
 }
 
 body {
-  padding-top: 60px;
-
   font-family: annie-use-your-telescope;
   font-style: normal;
   font-weight: 400;
   font-size: 28px;
-  text-align: center;
   background-color: #515151 !important;
+}
+
+.jumbotron {
+    background-color: #00DDDD;
+    color: #ffffff;
+    padding: 100px 25px;
+}
+
+.container-fluid {
+    padding: 60px 50px;
+}
+
+.bg-white {
+  background-color: #ffffff;
+
+}
+
+.bg-grey {
+    background-color: #f6f6f6;
+}
+
+.button-div {
+  padding: 0px;
 }
 
 *, p, span, div {
@@ -78,7 +98,7 @@ body main div {
   font-family: annie-use-your-telescope;
   font-style: normal;
   font-weight: 400;
-  font-size: 28px;
+  font-size: 22px;
 }
 
 /* adding new stuff here */

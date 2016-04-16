@@ -1,33 +1,45 @@
-<div class="row">
-  <div class="span12">
+<div class="jumbotron  text-center">
+  <!--<div class="row">
+    <div class="col-sm-12">
       <img class="logo img-responsive center-block" src="images/dreamcasters_logo.png" alt="Dreamcasters Logo"/>
+    </div>
+  </div>-->
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Dreamcasters</h1>
+      <p>Where dreamers unite</p>
+    </div>
   </div>
 </div>
-<div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs12">
-        <h1 style="text-align: center"><%= link_to 'New Dream', new_dream_path, :id => 'new_dream', :class => 'btn btn-primary btn-lg' %></h1>
+<div class="container-fluid text-center bg-white">
+  <div class="row">
+      <div class="col-sm-8 col-md-offset-2 button-div">
+        <span class="glyphicon glyphicon-wrench"></span>
+        <h1><%= link_to 'Create a new dream post', new_dream_path, :id => 'new_dream' %></h1>
       </div>
+  </div>
+  <div class="row">
+    <table class="table table-bordered table-striped" width="100%" border="1" cellspacing="2" cellpadding="5">
+    <tbody>
+      <tr>
+        <th class="col-lg-2 col-md-2 col-sm-2 col-xs2"><h2><strong>User Name:</strong></h2></th>
+        <th class="col-lg-2 col-md-2 col-sm-2 col-xs2"><h2><strong>Rating:</strong></h2></th>
+        <th scope="col"><h2><strong>Dream Title:</strong></h2></th>
+      </tr>
+      <% @dreams.each do |dream| %>
+      <tr>
+        <td class="attr"><%= dream.creator %></td>
+
+        <td class="attr">
+        <% if dream.upvote_count > 0 then %>+<%else%>&nbsp;<%end%><%= dream.upvote_count %>
+        <%= link_to "&#9650;".html_safe, upvote_dream_path(dream), :id => "upvote_btn_#{dream.slug}", method: :put %>
+        <%= link_to "&#9660;".html_safe, downvote_dream_path(dream), :id => "downvote_btn_#{dream.slug}", method: :put %><% if dream.downvote_count > 0 then %>-<%else%>&nbsp;<%end%><%= dream.downvote_count %></td>
+
+        <td><%= link_to dream.title, dream_path(dream),
+        :id => dream.title.downcase.gsub(" ", "_") %></td>
+      </tr>
+      <% end %>
+    </tbody>
+    </table>
+  </div>
 </div>
-
-<table class="table table-bordered table-striped" width="100%" border="1" cellspacing="2" cellpadding="5">
-<tbody>
-  <tr>
-    <th class="col-lg-2 col-md-2 col-sm-2 col-xs2"><h2><strong>User Name:</strong></h2></th>
-    <th class="col-lg-2 col-md-2 col-sm-2 col-xs2"><h2><strong>Rating:</strong></h2></th>
-    <th scope="col"><h2><strong>Dream Title:</strong></h2></th>
-  </tr>
-  <% @dreams.each do |dream| %>
-  <tr>
-    <td class="attr"><%= dream.creator %></td>
-
-    <td class="attr">
-    <% if dream.upvote_count > 0 then %>+<%else%>&nbsp;<%end%><%= dream.upvote_count %>
-    <%= link_to "&#9650;".html_safe, upvote_dream_path(dream), :id => "upvote_btn_#{dream.slug}", method: :put %>
-    <%= link_to "&#9660;".html_safe, downvote_dream_path(dream), :id => "downvote_btn_#{dream.slug}", method: :put %><% if dream.downvote_count > 0 then %>-<%else%>&nbsp;<%end%><%= dream.downvote_count %></td>
-
-    <td><%= link_to dream.title, dream_path(dream),
-    :id => dream.title.downcase.gsub(" ", "_") %></td>
-  </tr>
-  <% end %>
-</tbody>
-</table>
