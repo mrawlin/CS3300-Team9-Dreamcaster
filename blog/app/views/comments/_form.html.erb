@@ -13,3 +13,7 @@
 	<%= f.submit %>
   </p>
 <% end %>
+
+<%= link_to 'Edit Comment', edit_comment_path(@comment), :id => 'edit comment' %>
+<%= lint_to 'Back', dream_path, 
+	data: {confirm: 'Are you sure? You will lose all your revisions.', id: 'confirm'} %>
