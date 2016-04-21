@@ -2,18 +2,12 @@
 
 most_recent:
  content: "Making a quick test post"
- user_id:
+ user_id: 
  created_at: <%= Time.zone.now %>
 
 another_test:
  content: "This was made ten minutes ago..."
- user_id:
+ user_id: 
  created_at: <%= 10.minutes.ago %>
 
-one:
-  content: MyText
-  user_id: 
 
-two:
-  content: MyText
-  user_id: 
