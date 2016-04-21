@@ -70,7 +70,8 @@ group :development do
 end
 
 #paginate gem allows us to use paginate methods to control how many posts are shown on a page at a time, helps when handling a lot of posts could be shown
-gem 'will_paginate', '3.0.4'
+gem 'will_paginate',           '3.0.7'
+gem 'bootstrap-will_paginate', '0.0.10'
 
 gem 'faker'
 
