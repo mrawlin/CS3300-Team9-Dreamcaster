@@ -58,18 +58,10 @@ class DreamsController < ApplicationController
 
   def new
 		@dream = Dream.new
-
-    @user = @users(current_user)
-    @micropost = @user.microposts.build(content: "Testing tests", user_id: @user.id)
-
   end
 
 	def create
-		@dream = Dream.create(dream_params)
-
-
-    @user = @users(current_user)
-    @micropost = @user.microposts.build(content: @dream.text, user_id: @user.id)
+		@dream = current_user.dreams.create!(dream_params) #Dream.create(dream_params)
 
 		if @dream.valid? then
 			redirect_to @dream
@@ -88,6 +80,6 @@ class DreamsController < ApplicationController
 
 	private
 		def dream_params
-			params.require(:dream).permit(:title, :text, :uprating, :downrating, :creator)
+			params.require(:dream).permit(:user,:title,:content, :text, :uprating, :downrating, :creator)
 		end
 end

@@ -32,5 +32,6 @@ Rails.application.routes.draw do
  resources :dreams do
    resources :comments
  end
+  #resources :dreams,          only: [:create, :destroy]
   
 end
