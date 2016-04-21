@@ -47,12 +47,13 @@ $gray-medium-light: #eaeaea;
 .field_with_errors {
 }
 
-.checkbox {
-
-  span {
-
-    font-weight: normal;
-  }
+@media (min-width: 768px) {
+    .radio input[type="radio"], 
+    .checkbox input[type="checkbox"] {
+        float: left;
+        margin-top: 16px;
+        margin-left: -10px;
+    }
 }
 
 #session_remember_me {
