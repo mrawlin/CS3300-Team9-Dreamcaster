@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160417003313) do
+ActiveRecord::Schema.define(version: 20160421050931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 20160417003313) do
 
   add_index "comments", ["dream_id"], name: "index_comments_on_dream_id", using: :btree
 
+  create_table "dreamposts", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "dreamposts", ["user_id"], name: "index_dreamposts_on_user_id", using: :btree
+
   create_table "dreams", force: :cascade do |t|
     t.text     "title"
     t.text     "text"
@@ -35,7 +44,11 @@ ActiveRecord::Schema.define(version: 20160417003313) do
     t.integer  "uprating"
     t.integer  "downrating"
     t.string   "owner"
+    t.integer  "user_id"
+    t.text     "content"
   end
+
+  add_index "dreams", ["user_id"], name: "index_dreams_on_user_id", using: :btree
 
   create_table "microposts", force: :cascade do |t|
     t.text     "content"
@@ -75,5 +88,7 @@ ActiveRecord::Schema.define(version: 20160417003313) do
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
   add_foreign_key "comments", "dreams"
+  add_foreign_key "dreamposts", "users"
+  add_foreign_key "dreams", "users"
   add_foreign_key "microposts", "users"
 end
