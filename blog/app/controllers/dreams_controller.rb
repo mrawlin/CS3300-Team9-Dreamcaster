@@ -58,10 +58,19 @@ class DreamsController < ApplicationController
 
   def new
 		@dream = Dream.new
+
+    @user = @users(current_user)
+    @micropost = @user.microposts.build(content: "Testing tests", user_id: @user.id)
+
   end
 
 	def create
 		@dream = Dream.create(dream_params)
+
+
+    @user = @users(current_user)
+    @micropost = @user.microposts.build(content: @dream.text, user_id: @user.id)
+
 		if @dream.valid? then
 			redirect_to @dream
     else
