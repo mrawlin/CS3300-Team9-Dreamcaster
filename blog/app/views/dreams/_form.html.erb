@@ -25,7 +25,7 @@
 
 	  Posting as:&nbsp;
 		<% if logged_in? then
-			usr_name = @current_user.name
+			usr_name = @current_user.name || "anonymous"
                         
 		else
 			usr_name = "anonymous"
