@@ -45,8 +45,8 @@
 
 <div class="btn-group">
 <%= link_to 'Back to Home', dreams_path, :class => 'btn btn-primary btn-lg' %>
-<%= link_to 'Edit Dream', edit_dream_path(@dream), :id => 'edit_dream', :class => 'btn btn-primary btn-lg' %>
+<%= link_to 'Edit Dream', edit_dream_path(@dream), :id => 'edit_dream', :class => 'btn btn-primary btn-lg' :disabled => @dream.user_id != @current_user.id %>
 <%= link_to 'Delete Dream', dream_path(@dream), :id => 'delete_dream',
 	method: :delete, data: {confirm: 'Are you sure?', id: 'confirm'},
-	:class => 'btn btn-primary btn-lg' %>
+	:class => 'btn btn-primary btn-lg' :disabled => @dream.user_id != @current_user.id %>
 </div>
