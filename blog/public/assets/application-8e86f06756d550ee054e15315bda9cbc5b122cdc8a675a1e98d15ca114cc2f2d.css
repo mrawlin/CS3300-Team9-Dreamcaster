@@ -1,0 +1,279 @@
+/* mixins, variables, etc. */
+/* sidebar */
+/* line 17, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/custom.scss */
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 22, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/custom.scss */
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+/* miscellaneous */
+/* line 29, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/custom.scss */
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* forms */
+/* line 40, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/custom.scss */
+#error_explanation {
+  color: red;
+}
+/* line 42, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/custom.scss */
+#error_explanation ul {
+  color: red;
+  margin: 0 0 30px 0;
+}
+
+@media (min-width: 768px) {
+  /* line 52, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/custom.scss */
+  .radio input[type="radio"],
+  .checkbox input[type="checkbox"] {
+    float: left;
+    margin-top: 16px;
+    margin-left: -10px;
+  }
+}
+/* line 60, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/custom.scss */
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+/* Users index */
+/* line 67, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/custom.scss */
+.users {
+  list-style: none;
+  margin: 0;
+}
+/* line 70, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/custom.scss */
+.users li {
+  overflow: auto;
+  padding: 10px 0;
+  border-bottom: 1px solid;
+}
+
+/* dreams */
+/* line 79, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/custom.scss */
+.dreams {
+  list-style: none;
+  padding: 0;
+}
+/* line 82, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/custom.scss */
+.dreams li {
+  padding: 10px 0;
+  border-top: 1px solid #e8e8e8;
+}
+/* line 86, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/custom.scss */
+.dreams .user {
+  margin-top: 5em;
+  padding-top: 0;
+}
+/* line 90, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/custom.scss */
+.dreams .content {
+  display: block;
+  margin-left: 60px;
+}
+/* line 93, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/custom.scss */
+.dreams .content img {
+  display: block;
+  padding: 5px 0;
+}
+/* line 98, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/custom.scss */
+.dreams .timestamp {
+  display: block;
+  margin-left: 60px;
+}
+/* line 102, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/custom.scss */
+.dreams .gravatar {
+  float: left;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+/* line 110, /home/slade/assignments/group/gitgroup/blog/app/assets/stylesheets/custom.scss */
+aside textarea {
+  height: 100px;
+  margin-bottom: 5px;
+}
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+html {
+  font-family: annie-use-your-telescope;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+    -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+
+body {
+  padding-top: 60px;
+
+  font-family: annie-use-your-telescope;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  text-align: center;
+  background-color: #515151 !important;
+}
+
+*, p, span, div {
+  font-family: annie-use-your-telescope;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+}
+
+section {
+  overflow: auto;
+}
+
+input[type="checkbox"] {
+
+}
+
+.form-control {
+  font-family: annie-use-your-telescope;
+  font-style: normal;
+  font-weight: 400 !important;
+  font-size: 22px !important;
+}
+
+.navbar-brand {
+  font-size: 32px !important;
+  font-weight: normal !important;
+}
+
+.btn {
+  font-family: annie-use-your-telescope;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+}
+
+.btn-primary.btn-lg {
+    font-size: 22px !important;
+    padding: 8px !important;
+    font-weight: bold !important;
+
+}
+
+.submit-button { 
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+
+.container {
+  background-color: #FFFFFF;
+}
+
+body main div {
+  font-family: annie-use-your-telescope;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+}
+
+/* adding new stuff here */
+.tb1 {
+  text-align: left;
+  border: 2px dashed #D1C7AC;
+  font-family: annie-use-your-telescope;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.lefttext {
+  text-align: left;
+}
+
+.logo {
+  text-align: center;
+  padding: 5px;
+}
+
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #23527c;
+  text-decoration: underline;
+}
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+img {
+  vertical-align: middle;
+  text-align: center;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  font-family: annie-use-your-telescope;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+}
+
+
+th.attr, td.attr {
+  text-align: center;
+  white-space: nowrap;
+}
+
+td {
+  text-align: left;
+}
+
+th {
+  padding: 0;
+  font-family: annie-use-your-telescope;
+  font-style: normal;
+  font-weight: 400;
+  font-size: large;
+  text-align: left;
+}
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+
