@@ -27,4 +27,8 @@ class Dream < ActiveRecord::Base
   def to_param
     "#{id}-#{slug}"
   end
+
+	def self.search(search)
+		self.where("title ILIKE ? OR text ILIKE ?", "%#{search}%", "%#{search}%")
+	end
 end
