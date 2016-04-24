@@ -11,6 +11,15 @@
 
 <table class="table table-bordered table-striped" width="100%" border="1" cellspacing="2" cellpadding="5">
 <tbody>
+
+	<% if logged_in? %>
+		<%= @current_user.name %>
+	<% end %>
+
+	<% if @dreams.any? %>
+		<h4>There are no dreams containing the term <%= params[:search] %>.</h4>
+	<% end %>
+
   <tr>
     <th class="col-lg-2 col-md-2 col-sm-2 col-xs2"><h2><strong>User Name:</strong></h2></th>
     <th class="col-lg-2 col-md-2 col-sm-2 col-xs2"><h2><strong>Rating:</strong></h2></th>
