@@ -1,0 +1,21 @@
+<%= form_for([@comment, @comment.subthreadss.build]) do |f| %>
+	<% if logged_in? then
+		 usr_name = @current_user.name
+	   else
+		 usr_name = "anonymous"
+	   end %>
+
+	<p>
+	  <%= f.label :commenter %><br>
+	  <%= f.text_field :commenter, :readonly => true, :value => usr_name %>
+	</p>
+
+	<p>
+	  <%= f.label :body %><br>
+	  <%= f.text_area :body %>
+	</p>
+
+	<p>
+	  <%= f.submit %>
+	</p>
+<% end %>
