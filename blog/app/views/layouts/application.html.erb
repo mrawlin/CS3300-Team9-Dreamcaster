@@ -32,7 +32,10 @@
   <br>
   </div>
 
-
+	<%= form_tag(dreams_path, :method => "get", id: "search-form") do %>
+		<%= text_field_tag :search, params[:search], placeholder: "Search Dreams" %>
+		<%= submit_tag "Search", :name => nil %>
+	<% end %>
 
   <!-- <%= debug(params) if Rails.env.development? %>-->
 </body>
