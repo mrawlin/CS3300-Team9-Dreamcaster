@@ -40,6 +40,11 @@ class DreamsController < ApplicationController
 
 	def index
 		@dreams = Dream.all.reverse
+		if params[:search]
+			@dreams = Dream.search(params[:search]).order("created_at DESC")
+		else
+			@dreams = Dream.all.order("created_at DESC")
+		end
 	end
 
 	def edit
