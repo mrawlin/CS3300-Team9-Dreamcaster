@@ -26,14 +26,21 @@
 <body>
   <%= render 'layouts/header' %>
 
-  <%= yield %>
-
-  <br>
 
   <% flash.each do |message_type, message| %>
     <div class="alert alert-<%= message_type %>"><%= message %></div>
   <% end %>
+  
+	<div class="container">
 
+  <%= yield %>
+
+  <br>
+
+	<%= form_tag(dreams_path, :method => "get", id: "search-form") do %>
+		<%= text_field_tag :search, params[:search], placeholder: "Search Dreams" %>
+		<%= submit_tag "Search", :name => nil %>
+	<% end %>
 
   <!-- <%= debug(params) if Rails.env.development? %>-->
 </body>

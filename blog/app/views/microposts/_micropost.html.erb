@@ -1,0 +1,11 @@
+<ol class = "dreams"> 
+   <%= render @dreams%>
+</ol>
+<li id= "dream-<%= dream.id %>">
+   <%= link_to gravatar_for(dream.user, size: 50), dream.user %>
+   <span class="user"><%= link_to dream.user.name, dream.user %></span>
+   <span class="content"><%= dream.content %></span>
+   <span class="timestamp">
+      Posted <%= time_ago_in_words(dream.created_at) %> ago.
+   </span>
+</li>

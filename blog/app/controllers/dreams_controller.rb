@@ -61,7 +61,8 @@ class DreamsController < ApplicationController
   end
 
 	def create
-		@dream = Dream.create(dream_params)
+		@dream = current_user.dreams.create!(dream_params) #Dream.create(dream_params)
+
 		if @dream.valid? then
 			redirect_to @dream
     else
@@ -79,6 +80,6 @@ class DreamsController < ApplicationController
 
 	private
 		def dream_params
-			params.require(:dream).permit(:title, :text, :uprating, :downrating, :creator)
+			params.require(:dream).permit(:user,:title,:content, :text, :uprating, :downrating, :creator)
 		end
 end

@@ -16,4 +16,16 @@
   		<%= link_to 'Back to Home', dreams_path, :class => 'btn btn-primary btn-lg' %>
   </section>
   </aside>
+
+<div class="col-md-8">
+    <h3> Dreams (<%= @user.dreams.count %>) </h3>
+ <%if @user.dreams.any? %>
+    <ol class="dreams">
+      <%= render @dreams %>
+    </ol>
+   <%= will_paginate @dreams %>
+ <% end %>
+ </div>
 </div>
+
+  

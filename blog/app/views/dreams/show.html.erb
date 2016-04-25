@@ -8,8 +8,16 @@
 		<tr>
 		  <td> <strong>Title:</strong><%= @dream.title %></td>
 		</tr>
+    <tr>
+      <td class="attr">
+      <% if @dream.upvote_count > 0 then %>+<%else%>&nbsp;<%end%><%= @dream.upvote_count %>
+      <%= link_to "&#9650;".html_safe, upvote_dream_path(@dream), :id => "upvote_btn_#{@dream.slug}", method: :put %>
+      <%= link_to "&#9660;".html_safe, downvote_dream_path(@dream), :id => "downvote_btn_#{@dream.slug}", method: :put %>
+      <% if @dream.downvote_count > 0 then %>-<%else%>&nbsp;<%end%><%= @dream.downvote_count %>
+      </td>
+    </tr>
 		<tr>
-		  <td><strong>Text:</strong><%= @dream.text %></td>
+		  <td><strong>Text:</strong><%= @dream.content %></td>
 		</tr>
 	</tbody>
 </table>
@@ -37,8 +45,8 @@
 
 <div class="btn-group">
 <%= link_to 'Back to Home', dreams_path, :class => 'btn btn-primary btn-lg' %>
-<%= link_to 'Edit Dream', edit_dream_path(@dream), :id => 'edit_dream', :class => 'btn btn-primary btn-lg' %>
+<%= link_to 'Edit Dream', edit_dream_path(@dream), :id => 'edit_dream', :class => 'btn btn-primary btn-lg' :disabled => @dream.user_id != @current_user.id %>
 <%= link_to 'Delete Dream', dream_path(@dream), :id => 'delete_dream',
 	method: :delete, data: {confirm: 'Are you sure?', id: 'confirm'},
-	:class => 'btn btn-primary btn-lg' %>
+	:class => 'btn btn-primary btn-lg' :disabled => @dream.user_id != @current_user.id %>
 </div>

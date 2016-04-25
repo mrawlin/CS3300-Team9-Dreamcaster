@@ -12,18 +12,27 @@
       <div class="col-sm-8 col-sm-offset-2">
         <h1><%= link_to 'Create a new dream post', new_dream_path, :id => 'new_dream' %></h1>
       </div>
-  </div>
-  <div class="row table-div">
-    <table class="table table-bordered table-striped" width="100%" border="1" cellspacing="2" cellpadding="5">
-    <tbody>
-      <tr>
-        <th class="col-lg-2 col-md-2 col-sm-2 col-xs2"><h2><strong>User Name:</strong></h2></th>
-        <th class="col-lg-2 col-md-2 col-sm-2 col-xs2"><h2><strong>Rating:</strong></h2></th>
-        <th scope="col"><h2><strong>Dream Title:</strong></h2></th>
-      </tr>
-      <% @dreams.each do |dream| %>
-      <tr>
-        <td class="attr"><%= dream.creator %></td>
+</div>
+
+<table class="table table-bordered table-striped" width="100%" border="1" cellspacing="2" cellpadding="5">
+<tbody>
+
+	<% if logged_in? %>
+		<%= @current_user.name %>
+	<% end %>
+
+	<% if @dreams.any? %>
+		<h4>There are no dreams containing the term <%= params[:search] %>.</h4>
+	<% end %>
+
+  <tr>
+    <th class="col-lg-2 col-md-2 col-sm-2 col-xs2"><h2><strong>User Name:</strong></h2></th>
+    <th class="col-lg-2 col-md-2 col-sm-2 col-xs2"><h2><strong>Rating:</strong></h2></th>
+    <th scope="col"><h2><strong>Dream Title:</strong></h2></th>
+  </tr>
+  <% @dreams.each do |dream| %>
+  <tr>
+    <td class="attr"><%= dream.creator %></td>
 
         <td class="attr">
         <% if dream.upvote_count > 0 then %>+<%else%>&nbsp;<%end%><%= dream.upvote_count %>
