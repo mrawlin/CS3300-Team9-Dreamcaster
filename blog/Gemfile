@@ -32,6 +32,8 @@ gem 'haml'
 gem 'acts_as_votable', '~> 0.10.0'
 
 gem 'rspec-expectations'
+gem 'rails-helper'
+gem 'rails_helper'
 gem 'has_permalink'
 
 gem 'selenium-webdriver'
