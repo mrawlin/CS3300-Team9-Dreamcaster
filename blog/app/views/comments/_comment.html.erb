@@ -13,8 +13,18 @@
 				  method: :delete,
 				  data: { confirm: 'Are you sure?' } %>
 
-		<%# link_to 'Edit Comment', [comment.dream, comment],
+  <% from_reply_form ||= nil %>
+  <% unless from_reply_form %>
+	  <% if comment.leaf? %>
+		  <small class = "text-muted"> There are no replies yet - be the first to reply!</small>
+		  <% end %>
+  <p><%= link_to 'reply', new_comment_path(comment.id) %></p>
+	  <% end %>
+
+  <% link_to 'Edit Comment', [comment.dream, comment],
 					method: :update %>
 
          <HR WIDTH="70%" ALIGN="LEFT" COLOR="#ACCEE6">
 </div>
+
+<%= comments_tree_for @comments %>

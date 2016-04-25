@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421050931) do
+ActiveRecord::Schema.define(version: 20160425025253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,12 +25,22 @@ ActiveRecord::Schema.define(version: 20160421050931) do
     t.datetime "updated_at"
   end
 
+  create_table "comment_hierarchies", force: :cascade do |t|
+    t.integer "ancestor_id",   null: false
+    t.integer "descendant_id", null: false
+    t.integer "generations",   null: false
+  end
+
+  add_index "comment_hierarchies", ["ancestor_id", "descendant_id", "generations"], name: "comment_anc_desc_udx", unique: true, using: :btree
+  add_index "comment_hierarchies", ["descendant_id"], name: "comment_desc_idx", using: :btree
+
   create_table "comments", force: :cascade do |t|
     t.string   "commenter"
     t.text     "body"
     t.integer  "dream_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "parent_id"
   end
 
   add_index "comments", ["dream_id"], name: "index_comments_on_dream_id", using: :btree
@@ -112,6 +122,18 @@ ActiveRecord::Schema.define(version: 20160421050931) do
 
   add_index "rating_caches", ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type", using: :btree
 
+  create_table "subthreads", force: :cascade do |t|
+    t.string   "commenter"
+    t.text     "body"
+    t.integer  "comment_id"
+    t.integer  "dream_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "subthreads", ["comment_id"], name: "index_subthreads_on_comment_id", using: :btree
+  add_index "subthreads", ["dream_id"], name: "index_subthreads_on_dream_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -143,4 +165,6 @@ ActiveRecord::Schema.define(version: 20160421050931) do
   add_foreign_key "dreamposts", "users"
   add_foreign_key "dreams", "users"
   add_foreign_key "microposts", "users"
+  add_foreign_key "subthreads", "comments"
+  add_foreign_key "subthreads", "dreams"
 end

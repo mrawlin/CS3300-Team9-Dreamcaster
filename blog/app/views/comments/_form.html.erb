@@ -20,6 +20,12 @@
   </p>
 <% end %>
 
+<%= f.hidden_field :parent_id %>
+<div class = "form-group">
+  <%= f.label :title %>
+  <%= f.text_field :title, class: 'form-control' %>
+</div>
+
 <%# link_to 'Edit Comment', comment_path(@comment), :id => 'edit comment' %>
 <%= link_to 'Back', dream_path,
 	data: {confirm: 'Are you sure? You will lose all your revisions.', id: 'confirm'} %>
