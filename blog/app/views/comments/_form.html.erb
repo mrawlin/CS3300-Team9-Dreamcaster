@@ -18,14 +18,16 @@
   <p>
 	<%= f.submit %>
   </p>
-<% end %>
 
 <%= f.hidden_field :parent_id %>
 <div class = "form-group">
-  <%= f.label :title %>
-  <%= f.text_field :title, class: 'form-control' %>
+  <%= f.label :commenter %>
+  <%= f.text_field :body, class: 'form-control' %>
 </div>
+
+<% end %>
 
 <%# link_to 'Edit Comment', comment_path(@comment), :id => 'edit comment' %>
 <%= link_to 'Back', dream_path,
 	data: {confirm: 'Are you sure? You will lose all your revisions.', id: 'confirm'} %>
+
