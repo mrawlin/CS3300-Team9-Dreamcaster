@@ -16,6 +16,8 @@
   <% end %>
 
 	<% if @dreams.any? %>
+		<h4>Here are the dreams containing the term <%= params[:search] %>.</h4>
+	<% else %>
 		<h4>There are no dreams containing the term <%= params[:search] %>.</h4>
 	<% end %>
 
