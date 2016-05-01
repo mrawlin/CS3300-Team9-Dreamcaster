@@ -23,15 +23,12 @@
 
 	  Posting as:&nbsp;
 		<% if logged_in? then
-			usr_name = @current_user.name || "anonymous"
-                        
+			usr_name = @current_user.name || "anonymous"      
 		else
 			usr_name = "anonymous"
 		end %>
 
-	  <%= usr_name %><% if usr_name == "anonymous" then %>,&nbsp;<a href="/login">log in</a>
-	  	to post as a user.
-	  <% end %>
+	  <%= usr_name %>
 	</p>
 
 	<%= f.hidden_field :creator, :value => usr_name %>
