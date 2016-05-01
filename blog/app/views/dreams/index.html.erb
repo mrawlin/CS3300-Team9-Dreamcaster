@@ -7,10 +7,26 @@
       <div class="col-lg-offset-3 col-lg-2 col-md-2 col-sm-2 col-xs2">
         <h1 style="text-align: center"><%= link_to 'New Dream', new_dream_path, :id => 'new_dream', :class => 'btn btn-primary btn-lg' %></h1>
       </div>
+      <div class="col-lg-4">
+        <h1>
+        <%= form_tag(dreams_path, :method => "get", id: "search-form") do %>
+          <%= text_field_tag :search, params[:search], id: "search_box", placeholder: "Search Dreams" %>
+          <%= submit_tag "Search", :name => nil %>
+        <% end %>
+        </h1>
+      </div>
 </div>
 
 <table class="table table-bordered table-striped" width="100%" border="1" cellspacing="2" cellpadding="5">
 <tbody>
+  <% if !@dreams.any? %>
+    <h4>There are no dreams containing the term <%= params[:search] %>.</h4>
+  <% else  %>
+    <% if params[:search] %>
+    <h4>Here are the dreams containing the term <%= params[:search] %>.</h4>
+    <% end %>
+  <% end %>
+
   <tr>
     <th class="col-lg-2 col-md-2 col-sm-2 col-xs2"><h2><strong>User Name:</strong></h2></th>
     <th class="col-lg-2 col-md-2 col-sm-2 col-xs2"><h2><strong>Rating:</strong></h2></th>
@@ -24,7 +40,7 @@
     <% if dream.upvote_count > 0 then %>+<%else%>&nbsp;<%end%><%= dream.upvote_count %>
     <%= link_to "&#9650;".html_safe, upvote_dream_path(dream), :id => "upvote_btn_#{dream.slug}", method: :put %>
     <%= link_to "&#9660;".html_safe, downvote_dream_path(dream), :id => "downvote_btn_#{dream.slug}", method: :put %>
-		<% if dream.downvote_count > 0 then %>-<%else%>&nbsp;<%end%><%= dream.downvote_count %></td>
+    <% if dream.downvote_count > 0 then %>-<%else%>&nbsp;<%end%><%= dream.downvote_count %></td>
 
     <td><%= link_to dream.title, dream_path(dream),
     :id => dream.title.downcase.gsub(" ", "_") %></td>

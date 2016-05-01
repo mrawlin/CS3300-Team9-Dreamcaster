@@ -34,7 +34,7 @@ class Dream < ActiveRecord::Base
     "#{id}-#{slug}"
   end
 
-	# def self.search(search)
-	# 	self.where("title ILIKE ? OR content ILIKE ?", "%#{search}%", "%#{search}%")
-	# end
+	def self.search(search)
+		self.where("title ILIKE ? OR content ILIKE ?", "%#{search}%", "%#{search}%")
+	end
 end
