@@ -1,19 +1,16 @@
 <%= form_for @dream do |f| %>
-
-
   <% if @dream.errors.any? %>
-    <div id="error_explanation">
-	  <h2>
-		<%= pluralize(@dream.errors.count, "error") %>:
-	  </h2>
-	  <ul>
-		<% @dream.errors.full_messages.each do |msg| %>
-		  <li><%= msg %></li>
-			<% end %>
-	  </ul>
-	</div>
-<% end %>
-
+  	<div class="row">
+	    <div class="col-lg-6 col-lg-offset-3" id="error_explanation">
+			  <h2><%= pluralize(@dream.errors.count, "error") %>:</h2>
+			  <ul>
+					<% @dream.errors.full_messages.each do |msg| %>
+					  <li><%= msg %></li>
+					<% end %>
+			  </ul>
+			</div>
+		</div>
+	<% end %>
 	<p>
 	  <%= f.label :"Describe your dream in a few single words:" %><br>
 	  <%= f.text_field :title, :id => 'title', size: 30, :class => "tb1" %>
@@ -44,5 +41,4 @@
 	  <%= f.submit 'Create Dream', :id => 'create_dream', class: 'btn btn-primary btn-lg' %>
 	  <%= link_to 'Cancel', dreams_path %>
 	</p>
-
 <% end %>

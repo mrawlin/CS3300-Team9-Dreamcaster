@@ -2,9 +2,9 @@ class Dream < ActiveRecord::Base
 
   belongs_to :user
   default_scope -> { order(created_at: :desc) }
-  validates :content, presence: true, length: { maximum: 140 }
+  validates :content, presence: true, length: { maximum: 240 }
 	validates :title, presence: true,
-                    length:{minimum: 5 }
+                    length:{minimum: 4 }
   
 
   has_many :comments, dependent: :destroy
@@ -26,7 +26,8 @@ class Dream < ActiveRecord::Base
 	#make dream title "web friendly"
 	#lowercase and replace spaces with underscores '_'
   def slug
-    title.downcase.gsub(" ", "_")  
+    title.downcase.gsub(" ", "_")
+    title.gsub(".","")
   end
 
   def to_param
@@ -34,6 +35,6 @@ class Dream < ActiveRecord::Base
   end
 
 	def self.search(search)
-		self.where("title ILIKE ? OR text ILIKE ?", "%#{search}%", "%#{search}%")
+		self.where("title ILIKE ? OR content ILIKE ?", "%#{search}%", "%#{search}%")
 	end
 end

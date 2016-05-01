@@ -1,6 +1,5 @@
-<li id= "dream-<%= dream.id %>">
-   <span class="user"><%= link_to dream.user.name, dream.user %></span>
-   <span class="title"><%= dream.title %></span>
+<li id= "dream-<%= dream.id %>" class="te">
+   <span class="title"><%= link_to dream.user.name, dream.user %>&nbsp;-&nbsp;<%= dream.title %></span>
    <span class="content"><%= dream.content %></span>
    <span class="timestamp">
       Posted <%= time_ago_in_words(dream.created_at) %> ago.

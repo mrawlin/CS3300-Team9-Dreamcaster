@@ -4,28 +4,32 @@
     <section class="user_info">
       <h1>
         <%= gravatar_for @user %>
-        Username: <%= @user.name %><br>
-        User e-mail:&nbsp;<%= @user.email %>
+        <b>Username:</b>&nbsp;<%= @user.name %><br>
+        <b>User e-mail:</b>&nbsp;<%= @user.email %>
       </h1>
     </section>
   </aside>
 </div>
+
 <div class="row">
   <aside class="col-md-12 col-lg-12">
     <section>
   		<%= link_to 'Back to Home', dreams_path, :class => 'btn btn-primary btn-lg' %>
+      <%= link_to 'User Settings', edit_user_path(current_user), :class => 'btn btn-primary btn-lg' %>
   </section>
   </aside>
-
-<div class="col-md-8">
-    <h3> Dreams (<%= @user.dreams.count %>) </h3>
- <%if @user.dreams.any? %>
-    <ol class="dreams">
-      <%= render @dreams %>
-    </ol>
-   <%= will_paginate @dreams %>
- <% end %>
- </div>
 </div>
+<br>
+<div class="row">
+  <div class="col-lg-12 col-md-12">
+    <h1>Your Dreams (<%= @user.dreams.count %> total):</h1>
+    <%if @user.dreams.any? %>
+      <ol class="dreams">
+        <%= render @dreams %>
+      </ol>
 
+      <%= will_paginate @dreams %>
+    <% end %>
+   </div>
+</div>
   

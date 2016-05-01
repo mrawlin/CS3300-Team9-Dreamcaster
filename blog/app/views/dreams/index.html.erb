@@ -10,7 +10,7 @@
       <div class="col-lg-4">
         <h1>
         <%= form_tag(dreams_path, :method => "get", id: "search-form") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Search Dreams" %>
+          <%= text_field_tag :search, params[:search], id: "search_box", placeholder: "Search Dreams" %>
           <%= submit_tag "Search", :name => nil %>
         <% end %>
         </h1>
@@ -21,8 +21,10 @@
 <tbody>
 	<% if !@dreams.any? %>
 		<h4>There are no dreams containing the term <%= params[:search] %>.</h4>
-	<% else %>
+	<% else  %>
+    <% if params[:search] %>
 		<h4>Here are the dreams containing the term <%= params[:search] %>.</h4>
+    <% end %>
 	<% end %>
 
   <tr>

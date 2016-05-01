@@ -1,8 +1,4 @@
 class DreamsController < ApplicationController
-
-	#Added features are in this section:
-
-	#Voting is on 10 point scale to add more resolution
 	def upvote
 		@dream = Dream.find(params[:id])
 
@@ -67,7 +63,7 @@ class DreamsController < ApplicationController
 
 	def create
 		if logged_in?
-			@dream = current_user.dreams.create!(dream_params) #Dream.create(dream_params)
+			@dream = current_user.dreams.create(dream_params) #Dream.create(dream_params)
 		else 
 			@dream = Dream.create(dream_params)
 		end

@@ -3,21 +3,22 @@
 <table class="table table-bordered table-striped" width="100%" border="1" cellspacing="2" cellpadding="5">
   <tbody>
     <tr>
-	  <td><strong>Poster:</strong><%= @dream.creator %></td>
-	  </tr>
-		<tr>
-		  <td> <strong>Title:</strong><%= @dream.title %></td>
-		</tr>
-    <tr>
-      <td class="attr">
+      <td>
+      <strong>Rating: </strong>
       <% if @dream.upvote_count > 0 then %>+<%else%>&nbsp;<%end%><%= @dream.upvote_count %>
       <%= link_to "&#9650;".html_safe, upvote_dream_path(@dream), :id => "upvote_btn_#{@dream.slug}", method: :put %>
       <%= link_to "&#9660;".html_safe, downvote_dream_path(@dream), :id => "downvote_btn_#{@dream.slug}", method: :put %>
       <% if @dream.downvote_count > 0 then %>-<%else%>&nbsp;<%end%><%= @dream.downvote_count %>
       </td>
     </tr>
+    <tr>
+      <td><strong>Poster: </strong><%= @dream.creator %></td>
+	  </tr>
 		<tr>
-		  <td><strong>Text:</strong><%= @dream.content %></td>
+		  <td> <strong>Title: </strong><%= @dream.title %></td>
+		</tr>
+		<tr>
+		  <td><strong>Content: </strong><%= @dream.content %></td>
 		</tr>
 	</tbody>
 </table>
