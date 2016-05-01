@@ -5,7 +5,6 @@ class Dream < ActiveRecord::Base
   validates :content, presence: true, length: { maximum: 240 }
 	validates :title, presence: true,
                     length:{minimum: 4 }
-  
   has_many :comments, dependent: :destroy
   acts_as_votable
   
@@ -21,6 +20,8 @@ class Dream < ActiveRecord::Base
   def downvote_count
     self.get_downvotes.size
   end
+
+  def nil.downcase; '' end
 
 	#make dream title "web friendly"
 	#lowercase and replace spaces with underscores '_'
