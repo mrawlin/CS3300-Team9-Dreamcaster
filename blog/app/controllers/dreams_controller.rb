@@ -1,3 +1,4 @@
+#Controller class for:
 class DreamsController < ApplicationController
 	def upvote
 		@dream = Dream.find(params[:id])
@@ -35,9 +36,9 @@ class DreamsController < ApplicationController
 	end
 
 	def index
-		@dreams = Dream.all.reverse
-		if params[:search]
-			@dreams = Dream.search(params[:search]).order("created_at DESC")
+		ps = params[:search]
+		if ps
+			@dreams = Dream.search(ps).order("created_at DESC")
 		else
 			@dreams = Dream.all.order("created_at DESC")
 		end

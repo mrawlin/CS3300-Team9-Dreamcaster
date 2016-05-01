@@ -1,3 +1,4 @@
+#Controller class for:
 class CommentsController < ApplicationController
   def create
     @dream = Dream.find(params[:dream_id])

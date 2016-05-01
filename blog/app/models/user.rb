@@ -1,3 +1,4 @@
+#Class for user. Notice it belongs to dreams, and is dependent
 class User < ActiveRecord::Base
   acts_as_voter
   

@@ -1,3 +1,4 @@
+#Controller class for:
 class ApplicationController < ActionController::Base
 before_filter :expire_hsts
 

@@ -1,3 +1,4 @@
+#subthread class- currently unused!
 class Subthread < ActiveRecord::Base
   belongs_to :comment
   default_scope -> { order(created_at: :desc) }

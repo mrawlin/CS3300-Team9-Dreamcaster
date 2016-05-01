@@ -1,3 +1,5 @@
+#Model for Dream class.
+#Notice the validation
 class Dream < ActiveRecord::Base
 
   belongs_to :user
