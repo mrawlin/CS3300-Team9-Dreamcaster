@@ -3,6 +3,10 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <%= link_to "Home", root_path, class: 'navbar-brand' %>
+      <% if logged_in? %>
+        <font style="vertical-align: middle; float: left; margin-top: 5px; color: #fff">
+        &nbsp; &nbsp;<font style="font-style: italic;">logged in as</font>: <%= @current_user.name %></font>
+      <% end %>
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>

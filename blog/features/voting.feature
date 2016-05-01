@@ -5,7 +5,7 @@ Feature: Up/Down Vote
 
   Scenario: See Ratings for Dreams
     Given the following dreams exist:
-    | title  | text     |
+    | title  | content  |
     | title1 | text1    |
     | title2 | text2    |
 
@@ -19,7 +19,7 @@ Feature: Up/Down Vote
 
   Scenario: Up/Down Vote a dream
     Given the following dreams exist:
-    | title  | text     |
+    | title  | content  |
     | title1 | text1    |
     | title2 | text2    |
 

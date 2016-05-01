@@ -2,7 +2,7 @@ Feature: Keyword Search
 
 Background:
     Given the following dreams exist:
-      | title  | text     |
+      | title  | content  |
       | title1 | test     |
       | title2 | blah     |
 
