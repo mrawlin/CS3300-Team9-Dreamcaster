@@ -11,13 +11,14 @@
 
 <table class="table table-bordered table-striped" width="100%" border="1" cellspacing="2" cellpadding="5">
 <tbody>
-
 	<% if logged_in? %>
 		<%= @current_user.name %>
 	<% end %>
 
-	<% if @dreams.any? %>
+	<% if !@dreams.any? %>
 		<h4>There are no dreams containing the term <%= params[:search] %>.</h4>
+	<% else %>
+		<h4>Here are the dreams containing the term <%= params[:search] %>.</h4>
 	<% end %>
 
   <tr>
@@ -32,7 +33,8 @@
     <td class="attr">
     <% if dream.upvote_count > 0 then %>+<%else%>&nbsp;<%end%><%= dream.upvote_count %>
     <%= link_to "&#9650;".html_safe, upvote_dream_path(dream), :id => "upvote_btn_#{dream.slug}", method: :put %>
-    <%= link_to "&#9660;".html_safe, downvote_dream_path(dream), :id => "downvote_btn_#{dream.slug}", method: :put %><% if dream.downvote_count > 0 then %>-<%else%>&nbsp;<%end%><%= dream.downvote_count %></td>
+    <%= link_to "&#9660;".html_safe, downvote_dream_path(dream), :id => "downvote_btn_#{dream.slug}", method: :put %>
+		<% if dream.downvote_count > 0 then %>-<%else%>&nbsp;<%end%><%= dream.downvote_count %></td>
 
     <td><%= link_to dream.title, dream_path(dream),
     :id => dream.title.downcase.gsub(" ", "_") %></td>
