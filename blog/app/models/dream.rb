@@ -1,3 +1,5 @@
+#Model for Dream class.
+#Notice the validation
 class Dream < ActiveRecord::Base
 
   belongs_to :user
@@ -5,15 +7,13 @@ class Dream < ActiveRecord::Base
   validates :content, presence: true, length: { maximum: 240 }
 	validates :title, presence: true,
                     length:{minimum: 4 }
-  
-
   has_many :comments, dependent: :destroy
   acts_as_votable
   
   
-  def score
-    self.get_upvotes.size - self.get_downvotes.size
-  end
+  #def score
+  #  self.get_upvotes.size - self.get_downvotes.size
+  #end
 
   def upvote_count
     self.get_upvotes.size
@@ -22,6 +22,8 @@ class Dream < ActiveRecord::Base
   def downvote_count
     self.get_downvotes.size
   end
+
+  def nil.downcase; '' end
 
 	#make dream title "web friendly"
 	#lowercase and replace spaces with underscores '_'

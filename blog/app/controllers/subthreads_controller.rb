@@ -1,3 +1,5 @@
+#Controller class for:
+#currently unused
 class SubthreadsController < ApplicationController
     def create
       @comment = comment.find_by(params[:commment_id])

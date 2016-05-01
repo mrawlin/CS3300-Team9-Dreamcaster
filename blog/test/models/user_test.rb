@@ -72,7 +72,7 @@ class UserTest < ActiveSupport::TestCase
 
   test "associated dreams should be destroyed" do
     @user.save
-    @user.dreams.create!(content: "Lorem ipsum")
+    @user.dreams.create!(title: "fackshiza", content: "Lorem ipsum", creator: "anonymous")
     assert_difference 'Dream.count', -1 do
       @user.destroy
     end

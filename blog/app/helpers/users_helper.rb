@@ -1,3 +1,5 @@
+#Module for users - helper class
+#supports GRAVATAR
 module UsersHelper
 
   # Returns the Gravatar for the given user.

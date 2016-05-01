@@ -5,27 +5,34 @@ Feature: Comment on post
 
   Scenario: See the comments for the dream
     Given the following dreams exist:
-      | title  | text     | rating  |
-      | title1 | text1    | 0       |
-      | title2 | text2    | 2       |
+      | title  | content  |
+      | title1 | text1    |
+      | title2 | text2    |
 
     And I am on the home page
 
-    When I click on "title1"
+    When I click "title1"
     Then I should be on the dream page with title: title1
-    Then I should see the comments for the dream
+    When I fill in "comment_box" with "my thoughts"
+    When I press "create_comment"
+    Then I should see "Comments" before "my thoughts"
+
+    When I fill in "comment_box" with "my other thoughts"
+    When I press "create_comment"
+    Then I should see "Comments" before "my other thoughts"
+
 
   Scenario: Post Comment
     Given the following dreams exist:
-      | title  | text     | rating  |
-      | title1 | text1    | 1       |
-      | title2 | text2    | 3       |
+      | title  | content  |
+      | title1 | text1    |
+      | title2 | text2    |
 
     And I am on the home page
 
     Then I should see "title1"
-    When I click on "title1"
+    When I click "title1"
     Then I should be on the dream page with title: title1
-    When I fill in "interpret" with "my thoughts"
-    When I press "post"
-    Then I should see "Interpretations:" before "my thoughts"
+    When I fill in "comment_box" with "my thoughts"
+    When I press "create_comment"
+    Then I should see "Comments" before "my thoughts"

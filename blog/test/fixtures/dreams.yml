@@ -1,21 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 most_recent:
- content: "Making a quick test post"
- user_id:
- created_at: <%= Time.zone.now %>
+  title: "realbad"
+  content: "Making a quick test post"
+  user_id:
+  created_at: <%= Time.zone.now %>
 
 another_test:
- content: "This was made ten minutes ago..."
- user_id:
- created_at: <%= 10.minutes.ago %>
+  title: "butthurt"
+  content: "This was made ten minutes ago..."
+  user_id:
+  created_at: <%= 10.minutes.ago %>
 
 one:
   title: MyText
-  text: MyText
+  content: MyText
 
 two:
   title: MyText
-  text: MyText
+  content: MyText
 
 

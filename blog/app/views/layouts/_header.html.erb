@@ -3,6 +3,39 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <%= link_to "Home", root_path, class: 'navbar-brand' %>
+      <% if logged_in? %>
+        <font style="vertical-align: middle; float: left; margin-top: 5px; color: #fff">
+        &nbsp; &nbsp;<font style="font-style: italic;">logged in as</font>: <b><%= @current_user.name %></b></font>
+      <% end %>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <% if logged_in? %>
+          <li><%= link_to "Users", users_path %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Account <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Profile", current_user %></li>
+              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Log out", logout_path, method: "delete" %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li>
+            <a href="/login" id="login_link"><span class="glyphicon glyphicon-log-in"></span> Log in</a>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </nav>
