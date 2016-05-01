@@ -28,18 +28,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 #stuff I have added to iter1-1 (-Austin Wasinger)
 gem 'haml'
-
 gem 'acts_as_votable', '~> 0.10.0'
-
 gem 'rspec-expectations'
-
 gem 'has_permalink'
-
 gem 'selenium-webdriver'
-
 gem 'bcrypt',               '3.1.7'
 gem 'bootstrap-sass'
-
+gem 'metric_fu'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
