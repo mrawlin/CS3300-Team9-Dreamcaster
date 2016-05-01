@@ -32,6 +32,7 @@ gem 'haml'
 gem 'acts_as_votable', '~> 0.10.0'
 
 gem 'rspec-expectations'
+gem 'rspec'
 gem 'has_permalink'
 
 gem 'selenium-webdriver'
@@ -51,7 +52,7 @@ gem 'bootstrap-sass'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  #gem "rspec-rails", ">= 2.0.1"
+  gem "rspec-rails", ">= 2.0.1"
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'  
   gem 'byebug'

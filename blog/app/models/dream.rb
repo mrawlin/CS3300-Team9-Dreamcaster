@@ -11,9 +11,9 @@ class Dream < ActiveRecord::Base
   acts_as_votable
   
   
-  def score
-    self.get_upvotes.size - self.get_downvotes.size
-  end
+  #def score
+  #  self.get_upvotes.size - self.get_downvotes.size
+  #end
 
   def upvote_count
     self.get_upvotes.size
@@ -34,7 +34,7 @@ class Dream < ActiveRecord::Base
     "#{id}-#{slug}"
   end
 
-	def self.search(search)
-		self.where("title ILIKE ? OR content ILIKE ?", "%#{search}%", "%#{search}%")
-	end
+	# def self.search(search)
+	# 	self.where("title ILIKE ? OR content ILIKE ?", "%#{search}%", "%#{search}%")
+	# end
 end

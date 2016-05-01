@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'spec_helper'
 
 RSpec.describe UsersController, type: :controller do
 
@@ -9,12 +10,15 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-  def setup
-    @user = User.new(name: "Example User", email: "user@example.com")
+  describe UsersController do
+    it "has a valid "
   end
 
-  test "should be valid" do
-    assert @user.valid?
+  def setup
+    email = 'test@example.com'
+    password = 'password'
+    name = 'FreddyTheGhost'
+    @user = User.new(:name => name, :email => email, :password => password, :password_confirmation => password).save!
   end
 
 end

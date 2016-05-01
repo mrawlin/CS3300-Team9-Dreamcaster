@@ -40,3 +40,25 @@ Feature: Up/Down Vote
     And I should see "0" before "-1"
     And I should see "-1" before "title2"
 
+  Scenario: Up/Down Vote a dream as a different user
+    Given the following dreams exist:
+    | title  | content  |
+    | title1 | text1    |
+    | title2 | text2    |
+
+    Given I am on the home page
+    And I click "login_link"
+    Then I should be on the login page
+    When I click "signup_link"
+    Then I should be on the signup page
+
+    When I fill in "email" with "test@example.com"
+    And I fill in "password" with "password"
+    And I fill in "password_confirmation" with "password"
+    And I fill in "name" with "FreddyTheGhost"
+
+    And I press "create_account"
+
+    Then I should see "FreddyTheGhost"
+
+    Given I am on the home page
