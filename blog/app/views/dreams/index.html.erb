@@ -11,7 +11,7 @@
         <h1>
         <%= form_tag(dreams_path, :method => "get", id: "search-form") do %>
           <%= text_field_tag :search, params[:search], id: "search_box", placeholder: "Search Dreams" %>
-          <%= submit_tag "Search", :name => nil %>
+          <%= submit_tag "Search", :name => nil, id: "search_btn" %>
         <% end %>
         </h1>
       </div>
