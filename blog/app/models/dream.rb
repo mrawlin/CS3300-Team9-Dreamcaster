@@ -6,7 +6,6 @@ class Dream < ActiveRecord::Base
 	validates :title, presence: true,
                     length:{minimum: 4 }
   
-
   has_many :comments, dependent: :destroy
   acts_as_votable
   

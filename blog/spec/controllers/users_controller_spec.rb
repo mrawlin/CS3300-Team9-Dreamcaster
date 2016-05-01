@@ -11,7 +11,9 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe UsersController do
-    it "has a valid "
+    it "is invalid without a firstname" do
+      Factory.build(:contact, firstname: nil).should_not be_valid
+    end
   end
 
   def setup

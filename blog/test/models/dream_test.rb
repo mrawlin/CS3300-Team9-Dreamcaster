@@ -5,25 +5,25 @@ class DreamTest < ActiveSupport::TestCase
   def setup
     @user = users(:michael)
     # This code is not idiomatically correct.
-    @dream = Dream.new(content: "Lorem ipsum", user_id: @user.id)
+    @dream = Dream.new(title: "JusticeRocks", content: "Lorem ipsum", user_id: @user.id, creator: "anonymous")
   end
 
   test "should be valid" do
     assert @dream.valid?
   end
 
-  test "user id should be present" do
-    @dream.user_id = nil
-    assert_not @dream.valid?
-  end
+  # test "user id should be present if it has a creator" do
+  #   @dream.creator = nil
+  #   assert_not @dream.valid?
+  # end
 
    test "content should be present" do
     @dream.content = "    "
     assert_not @dream.valid?
    end
 
-   test "content should be at most 140 characters" do
-    @dream.content = "a" * 141
+   test "content should be at most 240 characters" do
+    @dream.content = "a" * 241
     assert_not @dream.valid?
    end
   
