@@ -66,7 +66,11 @@ class DreamsController < ApplicationController
   end
 
 	def create
-		@dream = current_user.dreams.create!(dream_params) #Dream.create(dream_params)
+		if logged_in?
+			@dream = current_user.dreams.create!(dream_params) #Dream.create(dream_params)
+		else 
+			@dream = Dream.create(dream_params)
+		end
 
 		if @dream.valid? then
 			redirect_to @dream
