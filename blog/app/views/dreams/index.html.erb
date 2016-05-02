@@ -19,11 +19,11 @@
 
 <table class="table table-bordered table-striped" width="100%" border="1" cellspacing="2" cellpadding="5">
 <tbody>
-  <% if !@dreams.any? %>
-    <h4>There are no dreams containing the term <%= params[:search] %>.</h4>
-  <% else  %>
-    <% if params[:search] %>
-    <h4>Here are the dreams containing the term <%= params[:search] %>.</h4>
+  <% if params[:search] %>
+    <% if !@dreams.any? %>
+      <h4>There are no dreams containing the term <%= params[:search] %>.</h4>
+    <% else  %>
+      <h4>Here are the dreams containing the term <%= params[:search] %>.</h4>
     <% end %>
   <% end %>
 
