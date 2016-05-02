@@ -4,7 +4,7 @@ class Dream < ActiveRecord::Base
 
   belongs_to :user
   default_scope -> { order(created_at: :desc) }
-  validates :content, presence: true, length: { maximum: 240 }
+  validates :content, presence: true, length: { maximum: 960 }
 	validates :title, presence: true,
                     length:{minimum: 4 }
   has_many :comments, dependent: :destroy

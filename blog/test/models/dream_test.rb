@@ -22,8 +22,8 @@ class DreamTest < ActiveSupport::TestCase
     assert_not @dream.valid?
    end
 
-   test "content should be at most 240 characters" do
-    @dream.content = "a" * 241
+   test "content should be at most 960 characters" do
+    @dream.content = "a" * 961
     assert_not @dream.valid?
    end
   
