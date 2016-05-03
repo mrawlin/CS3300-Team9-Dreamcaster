@@ -35,7 +35,11 @@
 	<%= f.hidden_field :uprating, :value => 0 %>
 	<%= f.hidden_field :downrating, :value => 0 %>
 	<p>
+	<% if logged_in? %>
 	  <%= f.submit 'Create Dream', :id => 'create_dream', class: 'btn btn-primary btn-lg' %>
+	<% else %>
+		<h3>You must be logged in to post a dream, silly!</h3>
+	<% end %>
 	  <%= link_to 'Cancel', dreams_path %>
 	</p>
 <% end %>

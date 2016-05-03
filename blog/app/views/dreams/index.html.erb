@@ -5,7 +5,11 @@
 </div>
 <div class="row">
       <div class="col-lg-offset-3 col-lg-2 col-md-2 col-sm-2 col-xs2">
+      <% if logged_in? %>
         <h1 style="text-align: center"><%= link_to 'New Dream', new_dream_path, :id => 'new_dream', :class => 'btn btn-primary btn-lg' %></h1>
+      <% else %>
+      <h3>Please login to post a dream!</h3>
+      <% end %>
       </div>
       <div class="col-lg-4">
         <h1>
